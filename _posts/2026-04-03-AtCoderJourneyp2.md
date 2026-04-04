@@ -90,6 +90,8 @@ Cuối giờ có hai việc xảy ra:
 
 <div style="display: grid; ; gap: 10px;">
   <img src="https://github.com/user-attachments/assets/f1c8e6fc-b74e-41d1-b2f0-f674e2e80977" width="100%">
+</div>
+
 
 Team AC 10 bài, top 5 chung cuộc, top 1 VN (expected). Sự thật cho thấy, 4 team tụi mình dự đoán có khả năng cạnh tranh vô địch là 4 team trên rank team mình.
 
