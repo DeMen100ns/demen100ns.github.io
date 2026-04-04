@@ -121,10 +121,10 @@ Chuyến đi lần này ngoài việc tham dự ICPC APAC và OCPC Camp, thì t�
 Chắc tụi mình đi chơi hết mấy chỗ tourist attraction ở Singapore rồi :))))
 
 <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;">
-  <img src="https://github.com/user-attachments/assets/a36e4c12-40ad-4bc8-882d-a5c2879022ad" width="24%">
-  <img src="https://github.com/user-attachments/assets/b4cea6cc-a43a-436f-84a8-e011b9c128f3" width="24%">
-  <img src="https://github.com/user-attachments/assets/97a8aac5-644a-4867-b4c0-76d206e7a670" width="24%">
-  <img src="https://github.com/user-attachments/assets/634fd106-46f0-48ae-9194-27610a6be2d1" width="24%">
+  <img src="https://github.com/user-attachments/assets/a36e4c12-40ad-4bc8-882d-a5c2879022ad" width="100%">
+  <img src="https://github.com/user-attachments/assets/b4cea6cc-a43a-436f-84a8-e011b9c128f3" width="100%">
+  <img src="https://github.com/user-attachments/assets/97a8aac5-644a-4867-b4c0-76d206e7a670" width="100%">
+  <img src="https://github.com/user-attachments/assets/634fd106-46f0-48ae-9194-27610a6be2d1" width="100%">
   <img src="https://github.com/user-attachments/assets/36f99cf8-3757-4bea-8b59-21cfd74a87e3" width="24%">
   <img src="https://github.com/user-attachments/assets/b7adc718-8465-425e-9a15-8538fed8064e" width="24%">
   <img src="https://github.com/user-attachments/assets/c57abc8c-87d5-4dcd-870f-d497c43fbbb2" width="24%">
