@@ -80,7 +80,7 @@ Sau khi Lamu ra lại idea thì vào vừa code vừa stress. Chỉnh mấy lầ
 
 Lúc này Demen tách ra nghĩ I, nên chỉ có Ann và Lamu làm J. (Không) bất ngờ, Ann nghĩ ra idea J (small-to-large) và bắt đầu code J.
 
-Team đối diện với cuộc chạy đua lên 11 bài để đạt mục tiêu. 2 đấm đầu tiên của Ann ở ~280' TLE do $O(n\log^2{n})$ không đủ nhanh. Mọi người lúc này khá hoảng vì tự nhiên thuật TLE nên không biết sửa kiểu gì. Xong Lamu suggest tối ưu lại chỗ gộp set, giảm từ $O(k \log{k})$ xuống $O(k)$ nên giảm tổng độ phức tạp xuống $O(n \log{n})$. Team AC J lúc 296', 4 phút trước khi hết giờ.
+Team đối diện với cuộc chạy đua lên 11 bài để đạt mục tiêu. 2 đấm đầu tiên của Ann ở ~280' TLE do O(nlog^2n) không đủ nhanh. Mọi người lúc này khá hoảng vì tự nhiên thuật TLE nên không biết sửa kiểu gì. Xong Lamu suggest tối ưu lại chỗ gộp set, giảm từ O(klogk) xuống O(k) nên giảm tổng độ phức tạp xuống O(nlogn). Team AC J lúc 296', 4 phút trước khi hết giờ.
 
 Cuối giờ có hai việc xảy ra:
 - Khoảng 15' trong đoạn nghĩ thuật optimize J thì Demen lên máy thử tìm quy luật I. Demen nghĩ ra bài này vài chục phút sau khi hết giờ.
