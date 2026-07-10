@@ -196,6 +196,78 @@ Chắc tụi mình đi chơi hết mấy chỗ tourist attraction ở Singapore 
   <img src="https://github.com/user-attachments/assets/258e309b-8176-4da9-b3da-eb2cf5bd8b12" width="100%">
   
   <img src="https://github.com/user-attachments/assets/266d5854-5bbc-4612-808a-db951aa9b2eb" width="100%">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-001.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-002.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-003.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-004.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-005.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-006.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-007.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-008.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-009.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-010.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-011.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-012.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-013.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-014.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-015.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-016.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-017.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-018.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-019.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-020.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-021.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-022.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-023.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-024.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-025.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-026.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-027.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-028.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-029.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-030.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-031.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-032.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-033.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-034.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-035.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-036.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-037.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-038.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-039.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-040.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-041.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-042.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-043.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-044.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-045.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-046.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-047.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-048.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-049.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-050.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-051.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-052.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-053.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-054.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-055.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-056.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-057.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-058.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-059.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-060.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-061.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-062.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-063.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-064.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-065.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-066.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-067.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-068.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-069.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-070.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-071.jpg" width="100%" loading="lazy" decoding="async">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-072.jpg" width="100%" loading="lazy" decoding="async">
 </div>
 
 
@@ -215,6 +287,7 @@ Sau đó tụi mình lên NUS chụp hình và đi farm merch và mình cũng ch
 
 <div style="display: grid; ; gap: 10px;">
   <img src="https://github.com/user-attachments/assets/45744b3e-ffeb-4a99-9926-f7fcad6f9c36" width="100%">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/apac-2025/nus-merch.jpg" width="100%" loading="lazy" decoding="async">
 </div>
 
 Tối hôm đó tụi mình được hội tin học Việt Nam mời đi ăn ở nhà hàng Marché.
@@ -225,6 +298,7 @@ Lễ khai mạc diễn ra ngắn gọn với màn trình diễn múa lân, và g
 
 <div style="display: grid; ; gap: 10px;">
   <img src="https://github.com/user-attachments/assets/0836a50c-13aa-46c0-9671-8b4540cd6b32" width="100%">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/apac-2025/opening-lion-dance.jpg" width="100%" loading="lazy" decoding="async">
 </div>
 
 Buổi tối, tụi mình được mời đi ăn tối cùng Jane Street.
@@ -254,6 +328,7 @@ Và đây là cách Ann với Lamu nghĩ K:
 
 <div style="display: grid; ; gap: 10px;">
   <img src="https://github.com/user-attachments/assets/2cf119e8-8462-4078-90bd-a817fcccc895" width="100%">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/apac-2025/problem-k-discussion.png" width="100%" loading="lazy" decoding="async">
 </div>
 
 Trong lúc Ann code K, Lamu chuyển sang nghĩ I.
@@ -271,6 +346,10 @@ Demen vào code H, và..... **BUG**. Chuyện là, demen đã miscalculation tro
 Do panik, demen không nghĩ ra cách tối ưu nào cả, lúc này còn 30', Ann với Lamu quyết định vào cứu. Tuy nhiên, do còn quá ít thời gian, cộng với sự hoảng loạn, rốt cuộc code sau khi fix vẫn là 11 queries hoặc là thuật sai...
 
 Cuối cùng team vẫn làm được 6 bài, vẫn đậu WF, nhưng mà chỉ được Bronze Medal APAC.
+
+<div style="display: grid; ; gap: 10px;">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/results/apac-2025-rankboard.png" width="100%" loading="lazy" decoding="async">
+</div>
 
 #### N-Dimensional Sum
 
@@ -290,3 +369,6 @@ BTC cho tụi mình voucher đi chơi miễn phí ở Universal Studio Singapore
 **Tối hôm đó, tụi mình phải ngồi xem lại chuyện gì đã xảy ra ở APAC. Một buổi tối dài hơi...**
 <img width="480" height="360" alt="image" src="https://github.com/user-attachments/assets/20ab0a70-7f4b-4157-89ac-e13e5b974a16" />
 
+<div style="display: grid; ; gap: 10px;">
+  <img src="/assets/posts/2026-04-03-atcoder-journey-p2/finale/to-be-continued.png" width="100%" loading="lazy" decoding="async">
+</div>
