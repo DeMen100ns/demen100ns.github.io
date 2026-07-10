@@ -1,0 +1,292 @@
+# One ICPC year of HCMUS-AtCoder (DeMen side)
+
+## Notation
+
+- Demen: Võ Khắc Triệu
+- Ann: Lê Nguyễn Hữu An
+- Lamu: Vũ Quốc Lâm
+
+## Cảm nghĩ của mình (Demen) về mùa ICPC vừa rồi cùng HCMUS-AtCoder
+
+Hi mọi người, mình là Triệu, hay mọi người thường biết đến mình là Demen. Mình cũng muốn chia sẻ một chút về một năm ICPC của mình với team HCMUS-AtCoder. Tính tới thời điểm thành lập AtCoder, mình đã "chơi" CP được 4 năm rồi, cũng quen biết được rất nhiều ae khủng và có một chút thành tích. Tuy nhiên, mình luôn cảm thấy chưa thỏa mãn, cảm giác vẫn còn thiếu chút gì đó. 
+
+Có lẽ HCMUS-AtCoder là điểm kết đẹp cho hành trình CP của mình. Lần đầu mình có huy chương Vàng là với AtCoder, lần đầu đi ICPC World Final cũng là với AtCoder. Lần đầu mình có cảm giác như trong một team thật sự, một tập thể thống nhất, cùng đi chơi, ăn ngủ, training với nhau. Những khoảnh khắc ấy thật sự rất vui và mình sẽ không bao giờ quên được, kể cả về sau này. 
+
+Cảm ơn Lamu, Ann và AtCoder.
+
+## ICPC Regional Hanoi 2024
+
+### Background
+
+Sau kỳ thi ICPC Jakarta tương đối thành công, team bước vào ICPC Hanoi với tấm thế thoải mái khi gần như nắm chắc vé vào APAC. Nên mục tiêu của AtCoder ở round này là **vô địch**.
+
+Các chi tiết (strategy/skill) của AtCoder giữa round Hanoi và round Jakarta không có nhiều sự thay đổi.
+
+Để đạt được mục tiêu, tụi mình đã thử list ra các team có thể cạnh tranh chức vô địch và có **4 team** như vậy (3 team NUS và fruit_advantage (NTaiwanU)). 
+
+### Day 1 (10/12/2024)
+
+Ngày tới. Cũng không có gì đặc sắc lắm, trừ việc gặp một số người quen cũng tham gia thi ICPC/Olp. Áo ICPC Regional Hanoi năm nay chất vải ổn hơn nhiều so với áo ICPC Regional Hue năm ngoái (cực mỏng).
+
+Team có pose để chụp hình nhưng mà hình không được dùng.
+
+### Day 2 (11/12/2024)
+
+Buổi sáng khai mạc Olympic Tin học Sinh viên và trao giải ICPC National. 
+
+> Note: Khai mạc, diễn ra rất lâu, rất mất thời gian. Một trong những điều cá nhân mình (demen) ghét nhất trong mọi kỳ thi tại VN nói chung và ICPC VN nói riêng.
+
+Buổi chiều diễn ra **Olympic Tin học Sinh viên**. Demen và Lamu có tham gia kỳ thi này. Có vẻ như cả hai cũng không chuẩn bị mấy cho kỳ thi, nhưng mà Demen có lợi thế ở bài Heuristic nên làm tốt hơn (cúp Bạc).
+
+### Day 3 (12/12/2024)
+
+Sáng sớm, tụi mình dậy sớm và cùng các team HCMUS đi **Bảo tàng Lịch sử Quân sự Việt Nam**. Thú thật là mình rất ngạc nhiên với độ lớn và chi tiết của bảo tàng này, quả thật là một trải nghiệm đáng giá. 
+
+Tầm trưa, tụi mình bắt xe về địa điểm thi để dự khai mạc ICPC Regional Hanoi và thử máy.
+
+Trước khi ngủ, tụi mình brief nhanh những gì cần làm cho ngày thi.
+
+### Day 4 (13/12/2024) - Ngày thi
+
+Thời tiết hôm thi khá lạnh, điển hình thời tiết Hà Nội vào mùa đông, cũng là điềm báo rằng kỳ thi sẽ vất vả.
+
+### Diễn biến kỳ thi
+
+#### Các bài AC
+- Demen: B, C, D
+- Pannda: F, G, J, K, M
+- Lamu: H, L
+
+#### 2 tiếng đầu (Phase 1)
+
+- Team AC **C, F, G, L, D** rất nhanh trong một tiếng đầu tiên.
+- Sau đó, Ann ac **M** ở phút thứ 97.
+
+Như vậy AtCoder đã AC 6 bài dễ nhất trong 2 tiếng đầu tiên. 
+
+#### 2 tiếng tiếp theo (Phase 2)
+
+Trong vòng 60' sau AC bài M thì team bắt đầu ngồi scout các bài trung bình - khó để làm nên chưa AC được bài nào cả.
+
+Lúc này Ann ra K và Demen ra B rồi. Demen ra trước nên code trước, cơ mà code bug (3 đấm), nên phải ra ngoài cho Ann code. Sau khi Ann AC K (160') thì Demen vô sửa code và AC (186').
+
+Lúc này, team lại quay lại scout bài khi các bài còn lại đều tương đối khó. Sau đó khoảng 30' (~210') thì Lamu ra H và bắt đầu code, tuy nhiên idea Lamu sai (phát hiện do stress code) nên ra ngoài ngồi debug.
+
+Trong lúc đó, Demen và Ann nghĩ thử J. Bài J khá khó nên chưa ai ra ý tưởng gì cả.
+
+#### 1 tiếng cuối cùng (Phase 3 / Freezing Phase)
+
+Sau khi Lamu ra lại idea thì vào vừa code vừa stress. Chỉnh mấy lần như vậy tự nhiên nó AC luôn :D. Lamu giờ qua phụ J.
+
+Lúc này Demen tách ra nghĩ I, nên chỉ có Ann và Lamu làm J. (Không) bất ngờ, Ann nghĩ ra idea J (small-to-large) và bắt đầu code J.
+
+Team đối diện với cuộc chạy đua lên 11 bài để đạt mục tiêu. 2 đấm đầu tiên của Ann ở ~280' TLE do O(nlog^2n) không đủ nhanh. Mọi người lúc này khá hoảng vì tự nhiên thuật TLE nên không biết sửa kiểu gì. Xong Lamu suggest tối ưu lại chỗ gộp set, giảm từ O(klogk) xuống O(k) nên giảm tổng độ phức tạp xuống O(nlogn). Team AC J lúc 296', 4 phút trước khi hết giờ.
+
+Cuối giờ có hai việc xảy ra:
+- Khoảng 15' trong đoạn nghĩ thuật optimize J thì Demen lên máy thử tìm quy luật I. Demen nghĩ ra bài này vài chục phút sau khi hết giờ.
+- 5' cuối Ann với Lamu thử code E. Thật ra bài E đã được làm từ đầu giờ nhưng lúc đó idea sai nên bỏ, và cuối giờ được ngồi nghĩ lại. Tất nhiên là không thành công.
+
+#### Kết quả
+
+<div style="display: grid; ; gap: 10px;">
+  <img src="https://github.com/user-attachments/assets/f1c8e6fc-b74e-41d1-b2f0-f674e2e80977" width="100%">
+</div>
+
+
+Team AC 10 bài, top 5 chung cuộc, top 1 VN (expected). Sự thật cho thấy, 4 team tụi mình dự đoán có khả năng cạnh tranh vô địch là 4 team trên rank team mình.
+
+Tụi mình cho rằng kết quả này là chấp nhận được, nhưng vẫn có những chỗ có thể cải thiện hơn trong các kỳ thi sắp tới. Riêng mình đã có một kỳ thi tệ khi cài bug nhiều, dẫn tới mất computer time của team.
+
+Ngoài ra, không may mắn thay, các team HCMUS khác đã có kết quả không tốt ở Regional nên đều đã không thể đậu APAC. Do đó HCMUS-AtCoder là đại diện duy nhất của HCMUS cho APAC 2025.
+
+### Day 5 (14/12/2025) - Bay về
+
+Có một sự kiện quan trọng xảy ra khi tụi mình ngồi trên máy bay. Vì chỉ còn mỗi team mình thi APAC cho HCMUS, nên tụi mình quyết định đặt vấn đề cho mục tiêu ở ICPC World Final luôn. Sau khi ngồi stalk và thảo luận một hồi, tụi mình quyết định đặt mục tiêu là:  **Medalist ICPC World Final.**
+
+Dù tụi mình cũng thấy là mục tiêu này hơi căng, nhưng mà vẫn có thể đạt được nếu train đủ nhiều và một chút may mắn. 
+
+## Chuẩn bị cho APAC
+
+Trong giai đoạn chuẩn bị này, tụi mình bắt đầu train những đề ở level APAC/WF (chủ yếu là đề UCup). Tụi mình có nhận ra là strategy tụi mình đang bị overwhelm nhưng mà vẫn chưa có cập nhật gì.
+
+Trong lúc chuẩn bị, tụi mình thấy [OCPC Winter Camp 2025](https://ocpc.camp/2025w/) đã mở. 
+
+> OCPC là ICPC Training Camp tổ chức tại University of Osijek, được host bởi [adamant](https://codeforces.com/profile/adamant). Camp gồm một chuỗi 7 contest tổ chức trong 9 ngày, các contest có độ khó ngang ICPC World Final.
+
+Vì camp năm nay có tổ chức mirror (4/7 contest) ở Singapore, ngay trước APAC Singapore 2025, nên tụi mình quyết định tham gia, để khởi động trước khi thi. Ban đầu tụi mình dự định tự trả tiền hết, tuy nhiên, đã được thầy Hùng fund tiền khách sạn, nên chỉ phải lo chi phí ăn uống và di chuyển.
+
+## OCPC Camp & ICPC Asia-Pacific Championship 2025 (Singapore)
+
+### Đi chơi (21/2/2025 - 2/3/2025)
+
+Chuyến đi lần này ngoài việc tham dự ICPC APAC và OCPC Camp, thì tụi mình cũng đi tham quan khắp Singapore. Cá nhân mình nghĩ lần đi này là lần đi vui nhất trong các chuyến đi của tụi mình ở season này.
+
+Chắc tụi mình đi chơi hết mấy chỗ tourist attraction ở Singapore rồi :))))
+
+<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;">
+  <img src="https://github.com/user-attachments/assets/a36e4c12-40ad-4bc8-882d-a5c2879022ad" width="100%">
+  <img src="https://github.com/user-attachments/assets/b4cea6cc-a43a-436f-84a8-e011b9c128f3" width="100%">
+  <img src="https://github.com/user-attachments/assets/97a8aac5-644a-4867-b4c0-76d206e7a670" width="100%">
+  <img src="https://github.com/user-attachments/assets/634fd106-46f0-48ae-9194-27610a6be2d1" width="100%">
+  <img src="https://github.com/user-attachments/assets/36f99cf8-3757-4bea-8b59-21cfd74a87e3" width="100%">
+  <img src="https://github.com/user-attachments/assets/b7adc718-8465-425e-9a15-8538fed8064e" width="100%">
+  <img src="https://github.com/user-attachments/assets/c57abc8c-87d5-4dcd-870f-d497c43fbbb2" width="100%">
+  <img src="https://github.com/user-attachments/assets/12caca4c-4cb7-40e5-bbac-7d8dbb82813b" width="100%">
+  <img src="https://github.com/user-attachments/assets/41fbe639-4567-40f8-ba32-fabc4c6cc91e" width="100%">
+  <img src="https://github.com/user-attachments/assets/d684113b-1da5-47f5-b5e7-3c314e66fa3c" width="100%">
+  <img src="https://github.com/user-attachments/assets/6d56e846-c1c0-4815-abb9-f1de6427d837" width="100%">
+  <img src="https://github.com/user-attachments/assets/82428d32-f176-4c36-8986-425bf974eb15" width="100%">
+  <img src="https://github.com/user-attachments/assets/84c31a5e-ed07-489a-bae7-4443e117dec1" width="100%">
+  <img src="https://github.com/user-attachments/assets/7f3d37a5-dda8-4594-b925-780812e56b7b" width="100%">
+  <img src="https://github.com/user-attachments/assets/a88357b7-f6b5-4eb4-a743-c32fbc1e6de9" width="100%">
+
+  <img src="https://github.com/user-attachments/assets/9b68b5d9-d1ef-42ac-9e94-f620706b77fc" width="100%">
+  <img src="https://github.com/user-attachments/assets/2581cfc5-b1de-44a6-b0bc-01df04bfc7e5" width="100%">
+  <img src="https://github.com/user-attachments/assets/2a687cd8-835c-41ba-83fd-9110a9749cde" width="100%">
+  <img src="https://github.com/user-attachments/assets/3933f550-af3e-492b-b0cd-0154acefbf00" width="100%">
+  
+  <img src="https://github.com/user-attachments/assets/64555e76-bf7f-48bf-aab5-7ea210947c42" width="100%">
+  <img src="https://github.com/user-attachments/assets/2c8a8adc-c188-4a5e-9f04-d7370285134b" width="100%">
+  <img src="https://github.com/user-attachments/assets/09fe39cd-6737-4b04-a732-15e4c11f8533" width="100%">
+  <img src="https://github.com/user-attachments/assets/0eb57f45-4bab-4108-aa50-33bbe3c3d54f" width="100%">
+  
+  <img src="https://github.com/user-attachments/assets/00a4c273-917e-462e-81c2-f244396ec3f3" width="100%">
+  <img src="https://github.com/user-attachments/assets/5a609903-355c-4639-9837-09fd21a9b7e0" width="100%">
+  <img src="https://github.com/user-attachments/assets/48b2010d-7150-4d44-be96-8b231f486939" width="100%">
+  <img src="https://github.com/user-attachments/assets/f7d0e0d3-8614-440d-aa3a-97f0205ed8ba" width="100%">
+  
+  <img src="https://github.com/user-attachments/assets/3b2bc697-5ccf-47ff-83df-4195a04a16b9" width="100%">
+  <img src="https://github.com/user-attachments/assets/aae0eff5-bbe9-41b9-ad14-313bcd2ec542" width="100%">
+  <img src="https://github.com/user-attachments/assets/8414e60c-e595-4753-996b-1f0b692cd165" width="100%">
+  <img src="https://github.com/user-attachments/assets/36acba86-a8d8-4541-980f-3413e6865f72" width="100%">
+  
+  <img src="https://github.com/user-attachments/assets/7b5cb727-5c35-45dd-87c6-6ee9d867263f" width="100%">
+  <img src="https://github.com/user-attachments/assets/eeee7959-e181-48a9-b04e-21f00876d539" width="100%">
+  <img src="https://github.com/user-attachments/assets/391b229f-236a-4673-9c61-008b79c08460" width="100%">
+  <img src="https://github.com/user-attachments/assets/0d5d9582-0d4a-4abd-b643-7713f20de7e6" width="100%">
+  
+  <img src="https://github.com/user-attachments/assets/881a4c63-381b-4a7c-a0d4-cb65bb9cb472" width="100%">
+  <img src="https://github.com/user-attachments/assets/48a0cbd9-9aa1-45e8-9613-abb610b2a5d7" width="100%">
+  <img src="https://github.com/user-attachments/assets/6d063266-b4b7-4feb-bf38-e1f134e1f3d6" width="100%">
+  <img src="https://github.com/user-attachments/assets/b30d71ea-6899-4b31-ad69-69a3545e9a15" width="100%">
+  
+  <img src="https://github.com/user-attachments/assets/d05c22c5-5c88-4426-9770-bd12d70017b8" width="100%">
+  <img src="https://github.com/user-attachments/assets/5bfa1562-8808-4d86-85f6-bd9012cdcd0c" width="100%">
+  <img src="https://github.com/user-attachments/assets/aabbe285-29be-4bc2-8963-bc5b1c1f86f1" width="100%">
+  <img src="https://github.com/user-attachments/assets/237c74a0-2f0e-47af-87f4-ff335b482dcb" width="100%">
+  
+  <img src="https://github.com/user-attachments/assets/d569db21-d77d-4007-8fe1-7f952e9b83c4" width="100%">
+  <img src="https://github.com/user-attachments/assets/63ae653c-3031-43bf-acb3-150f0ba10f59" width="100%">
+  <img src="https://github.com/user-attachments/assets/b80e4a3a-5b37-4ab3-a403-cc2627a528a1" width="100%">
+
+  <img src="https://github.com/user-attachments/assets/2750d72e-2f79-4821-84e0-8d178af96e71" width="100%">
+  <img src="https://github.com/user-attachments/assets/fc325eae-3735-4cef-b8fc-e5a8dd7bd43d" width="100%">
+  <img src="https://github.com/user-attachments/assets/abba767a-c302-4636-b69b-93a3479bede3" width="100%">
+  
+  <img src="https://github.com/user-attachments/assets/1f399fcc-6ce3-4467-8ada-6b8f0e2c969f" width="100%">
+  <img src="https://github.com/user-attachments/assets/661a2d71-78b2-411b-b9f0-1ee6c12dd936" width="100%">
+  <img src="https://github.com/user-attachments/assets/839a127f-1ab2-493c-ba71-4497ff322339" width="100%">
+  
+  <img src="https://github.com/user-attachments/assets/01b9eff9-e25e-4b1e-b578-586be530cf9f" width="100%">
+  <img src="https://github.com/user-attachments/assets/69643ebd-d780-49c6-b2fb-aaddea9d3293" width="100%">
+  <img src="https://github.com/user-attachments/assets/0670800d-8157-4a31-a820-4030787908ec" width="100%">
+  
+  <img src="https://github.com/user-attachments/assets/f5b2a697-b881-4329-9646-1ad4716936f1" width="100%">
+  <img src="https://github.com/user-attachments/assets/51dc7353-61aa-4d14-9c38-d4b5bd1d8551" width="100%">
+  <img src="https://github.com/user-attachments/assets/258e309b-8176-4da9-b3da-eb2cf5bd8b12" width="100%">
+  
+  <img src="https://github.com/user-attachments/assets/266d5854-5bbc-4612-808a-db951aa9b2eb" width="100%">
+</div>
+
+
+### Comment chung về OCPC Camp (22/2/2025 - 26/2/2025, Singapore)
+
+Đề OCPC được thiết kế rất hay, với mỗi contest là do một team khác nhau ra đề. Tụi mình đánh giá cao chất lượng của đề thi.
+
+Có điều, tụi mình perform khá tệ, y chang mấy contest virtual gần đây, có lẽ là do kiệt sức vì phải di chuyển hơn 2 tiếng mỗi ngày (metro), và có lẽ là do strategy đang không tốt.
+
+Dù sao thì, việc phong độ không tốt là điềm báo cho một kỳ thi không tốt.
+
+### Day 1 (27/2/2025)
+
+Tụi mình di chuyển qua khách sạn gần NUS với mấy thầy, có cái giường đôi trông ngộ ngộ :))
+
+Sau đó tụi mình lên NUS chụp hình và đi farm merch và mình cũng chạy đi mua NUS merch:
+
+<div style="display: grid; ; gap: 10px;">
+  <img src="https://github.com/user-attachments/assets/45744b3e-ffeb-4a99-9926-f7fcad6f9c36" width="100%">
+</div>
+
+Tối hôm đó tụi mình được hội tin học Việt Nam mời đi ăn ở nhà hàng Marché.
+
+### Day 2 (28/2/2025)
+
+Lễ khai mạc diễn ra ngắn gọn với màn trình diễn múa lân, và giới thiệu các team ^^, và sau đó là buổi thi thử.
+
+<div style="display: grid; ; gap: 10px;">
+  <img src="https://github.com/user-attachments/assets/0836a50c-13aa-46c0-9671-8b4540cd6b32" width="100%">
+</div>
+
+Buổi tối, tụi mình được mời đi ăn tối cùng Jane Street.
+
+<div style="display: grid; ; gap: 10px;">
+  <img src="https://github.com/user-attachments/assets/55e9a024-a976-406c-ac10-453d925dc395" width="100%">
+</div>
+
+### Day 3 (1/3/2025)
+
+Ngày thi chính thức. Tụi mình tới địa điểm thi rất sớm. Dự kiến kỳ thi hôm nay sẽ căng thẳng đấy....
+
+#### Phase 1 (2 tiếng đầu)
+
+Tụi mình AC 5 bài trong tiếng đầu, lần lượt:
+- DeMen: A
+- Kriz_Wu: D, J, L
+- Ann: G
+
+Đây là 5 bài dễ nhất đề, nên tụi mình không quá nhiều trở ngại. Kết thúc phase 1, tụi mình đang ở rank 8, tương đối ổn và an toàn cho suất đi World Final.
+
+#### Phase 2 (2 tiếng sau)
+
+Các bài còn lại khá khó chịu nên team phải scout bài rất lâu để có hướng suy nghĩ. Sau 30', Demen nghĩ bài H, còn Ann và Lamu chuyển sang làm K. 
+
+Và đây là cách Ann với Lamu nghĩ K:
+
+<div style="display: grid; ; gap: 10px;">
+  <img src="https://github.com/user-attachments/assets/2cf119e8-8462-4078-90bd-a817fcccc895" width="100%">
+</div>
+
+Trong lúc Ann code K, Lamu chuyển sang nghĩ I.
+
+Mất khá lâu (~40') để Ann AC K (227'), sau đó Lamu code I, trong khi DeMen push H vào queue.
+
+Lamu code I trong khoảng 30' và phát hiện ra thuật sai, nên pop I ra khỏi queue.
+
+Kết thúc phase 2, team có 6 bài, và theo tính toán là 99\% đậu World Final rồi :>
+
+#### Phase 3 (1 tiếng cuối)
+
+Demen vào code H, và..... **BUG**. Chuyện là, demen đã miscalculation trong lúc làm H. Bài H yêu cầu dùng nhiều nhất 10 queries, và code demen dùng ... 11 queries! 
+
+Do panik, demen không nghĩ ra cách tối ưu nào cả, lúc này còn 30', Ann với Lamu quyết định vào cứu. Tuy nhiên, do còn quá ít thời gian, cộng với sự hoảng loạn, rốt cuộc code sau khi fix vẫn là 11 queries hoặc là thuật sai...
+
+Cuối cùng team vẫn làm được 6 bài, vẫn đậu WF, nhưng mà chỉ được Bronze Medal APAC.
+
+#### N-Dimensional Sum
+
+Sau lễ trao giải, Lamu bắt chuyện với team BINUS U về solution các bài. Đây là lần nói chuyện đầu tiên giữa AtCoder và N-Dimensional Sum, khởi đầu cho tình bạn đẹp của 2 team :>
+
+#### Conclusion
+
+Mình, người viết bài, cảm thấy đây là kỳ thi chính thức mình làm tệ nhất trong season này, với 4.5 tiếng gần như không đóng góp gì cho team. Hên là Ann (và Lamu) clutch được bài khó hơn (bài K) nên team mới đậu WF được. 
+
+Tụi mình đều nhận ra đây là phong độ tệ nhất của AtCoder kể từ ICPC vòng trường. Sẽ có gì đó phải thay đổi trong 6 tháng tới ICPC WF.
+
+
+### Day 4 (2/3/2025)
+
+BTC cho tụi mình voucher đi chơi miễn phí ở Universal Studio Singapore. Thầy Triết đã chỉ tụi mình cách đi chơi trong USS. 
+
+**Tối hôm đó, tụi mình phải ngồi xem lại chuyện gì đã xảy ra ở APAC. Một buổi tối dài hơi...**
+<img width="480" height="360" alt="image" src="https://github.com/user-attachments/assets/20ab0a70-7f4b-4157-89ac-e13e5b974a16" />
+

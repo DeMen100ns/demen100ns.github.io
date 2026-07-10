@@ -1,0 +1,39 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { formatPostDate, getAllPosts } from "../lib/posts";
+
+const posts = getAllPosts();
+---
+
+<BaseLayout>
+  <main class="home">
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow">Personal blog</p>
+      <h1 id="page-title">DeMen100ns's Blog</h1>
+      <p class="intro-copy">
+        Notes from competitive programming, university life, and the occasional long recap.
+      </p>
+    </section>
+
+    <section class="post-list" aria-label="Blog posts">
+      {posts.map((post) => (
+        <article class="post-card">
+          <a class="post-card-media" href={post.url} aria-label={post.title}>
+            <span class="post-card-placeholder">{post.year}</span>
+            {post.thumbnail ? (
+              <img src={post.thumbnail} alt="" loading="lazy" decoding="async" onerror="this.remove()" />
+            ) : null}
+          </a>
+          <div class="post-card-body">
+            <div class="post-meta">
+              <time datetime={post.date}>{formatPostDate(post.date)}</time>
+              <span>{post.readingMinutes} min read</span>
+            </div>
+            <h2><a href={post.url}>{post.title}</a></h2>
+            <p>{post.excerpt}</p>
+          </div>
+        </article>
+      ))}
+    </section>
+  </main>
+</BaseLayout>

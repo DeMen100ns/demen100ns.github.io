@@ -1,0 +1,30 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { formatPostDate, getAllPosts, renderMarkdown } from "../../lib/posts";
+
+export function getStaticPaths() {
+  return getAllPosts().map((post) => ({
+    params: { slug: post.routeSlug },
+    props: { post }
+  }));
+}
+
+const { post } = Astro.props;
+const renderedBody = renderMarkdown(post.body);
+---
+
+<BaseLayout title={post.title} description={post.excerpt}>
+  <main class="post-page">
+    <article>
+      <header class="post-header">
+        <a class="back-link" href="/">Back to posts</a>
+        <div class="post-meta">
+          <time datetime={post.date}>{formatPostDate(post.date)}</time>
+          <span>{post.readingMinutes} min read</span>
+        </div>
+        <h1>{post.title}</h1>
+      </header>
+      <div class="post-content" set:html={renderedBody} />
+    </article>
+  </main>
+</BaseLayout>
