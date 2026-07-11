@@ -42,7 +42,7 @@ function firstHeading(markdownSource: string, fallback: string) {
 }
 
 function firstImage(markdownSource: string) {
-  const markdownMatch = /!\[[^\]]*]\((https?:\/\/[^)\s]+)(?:\s+["'][^"']*["'])?\)/i.exec(markdownSource);
+  const markdownMatch = /!\[[^\]]*]\(([^)\s]+)(?:\s+["'][^"']*["'])?\)/i.exec(markdownSource);
   const htmlMatch = /<img\b[^>]*\bsrc=["']([^"']+)["'][^>]*>/i.exec(markdownSource);
 
   const candidates = [
