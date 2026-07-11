@@ -2,14 +2,14 @@ export type PostMetadata = Record<string, string | string[] | undefined>;
 
 export const postMetadata: Record<string, PostMetadata> = {
   "2025-05-21-TT-part1.md": {
-    cover: "/assets/posts/tt-2025-part1-cover.svg",
-    hero: "/assets/posts/tt-2025-part1-cover.svg",
+    cover: "/assets/posts/tt-2025/tt-2025-part1-team.jpg",
+    hero: "/assets/posts/tt-2025/tt-2025-part1-team.jpg",
     category: "Contest",
     tags: ["Contest", "Thach Thuc", "Recap", "Chicken+"]
   },
   "2025-05-28-TT-part2.md": {
-    cover: "/assets/posts/tt-2025-part2-cover.svg",
-    hero: "/assets/posts/tt-2025-part2-cover.svg",
+    cover: "/assets/posts/tt-2025/tt-2025-part2-contest.jpg",
+    hero: "/assets/posts/tt-2025/tt-2025-part2-contest.jpg",
     category: "Contest",
     tags: ["Contest", "Thach Thuc", "Debugging", "Chicken+"]
   },
