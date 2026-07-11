@@ -3,37 +3,82 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { formatPostDate, getAllPosts } from "../lib/posts";
 
 const posts = getAllPosts();
+const featuredPost = posts[0];
+const recentPosts = posts.slice(0, 5);
+const categories = [...posts.reduce((map, post) => {
+  map.set(post.category, (map.get(post.category) ?? 0) + 1);
+  return map;
+}, new Map<string, number>())].sort((a, b) => b[1] - a[1]);
 ---
 
-<BaseLayout>
-  <main class="home">
-    <section class="intro" aria-labelledby="page-title">
-      <p class="eyebrow">Personal blog</p>
-      <h1 id="page-title">DeMen100ns's Blog</h1>
-      <p class="intro-copy">
-        Notes from competitive programming, university life, and the occasional long recap.
-      </p>
+<BaseLayout
+  heroImage={featuredPost?.thumbnail}
+  heroTitle="DeMen100ns's Blog"
+  heroSubtitle="ICPC stories, university notes, contest recaps, and whatever survives the markdown folder."
+>
+  <main class="layout-grid home">
+    <section class="feed-panel" aria-label="Blog posts">
+      <div class="section-heading">
+        <p class="eyebrow">Archives</p>
+        <h2>Latest Posts</h2>
+      </div>
+
+      <div class="post-list">
+        {posts.map((post) => (
+          <article class="post-card">
+            <a class="post-card-media" href={post.url} aria-label={post.title}>
+              <span class="post-card-placeholder">{post.year}</span>
+              {post.thumbnail ? (
+                <img src={post.thumbnail} alt="" loading="lazy" decoding="async" onerror="this.remove()" />
+              ) : null}
+            </a>
+            <div class="post-card-body">
+              <div class="post-meta">
+                <time datetime={post.date}>{formatPostDate(post.date)}</time>
+                <span>{post.readingMinutes} min read</span>
+              </div>
+              <h3><a href={post.url}>{post.title}</a></h3>
+              <p>{post.excerpt}</p>
+              <div class="tag-row">
+                {post.tags.map((tag) => <span>{tag}</span>)}
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
     </section>
 
-    <section class="post-list" aria-label="Blog posts">
-      {posts.map((post) => (
-        <article class="post-card">
-          <a class="post-card-media" href={post.url} aria-label={post.title}>
-            <span class="post-card-placeholder">{post.year}</span>
-            {post.thumbnail ? (
-              <img src={post.thumbnail} alt="" loading="lazy" decoding="async" onerror="this.remove()" />
-            ) : null}
-          </a>
-          <div class="post-card-body">
-            <div class="post-meta">
+    <aside class="site-sidebar" aria-label="Blog sidebar">
+      <section class="profile-card">
+        <div class="profile-avatar">D</div>
+        <h2>DeMen100ns</h2>
+        <p>Competitive programming, campus logs, and long-form ICPC memory dumps.</p>
+        <div class="profile-stats">
+          <span><strong>{posts.length}</strong> posts</span>
+          <span><strong>{categories.length}</strong> topics</span>
+        </div>
+      </section>
+
+      <section class="widget-card">
+        <h2>Recent</h2>
+        <ul class="compact-list">
+          {recentPosts.map((post) => (
+            <li>
+              <a href={post.url}>{post.title}</a>
               <time datetime={post.date}>{formatPostDate(post.date)}</time>
-              <span>{post.readingMinutes} min read</span>
-            </div>
-            <h2><a href={post.url}>{post.title}</a></h2>
-            <p>{post.excerpt}</p>
-          </div>
-        </article>
-      ))}
-    </section>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section class="widget-card">
+        <h2>Categories</h2>
+        <div class="category-cloud">
+          {categories.map(([category, count]) => (
+            <span>{category}<strong>{count}</strong></span>
+          ))}
+        </div>
+      </section>
+    </aside>
   </main>
 </BaseLayout>

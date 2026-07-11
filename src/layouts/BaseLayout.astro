@@ -4,11 +4,19 @@ import "../styles/global.css";
 type Props = {
   title?: string;
   description?: string;
+  heroTitle?: string;
+  heroKicker?: string;
+  heroSubtitle?: string;
+  heroImage?: string;
 };
 
 const {
   title = "DeMen100ns's Blog",
-  description = "Competitive programming, university notes, and personal writing by DeMen100ns."
+  description = "Competitive programming, university notes, and personal writing by DeMen100ns.",
+  heroTitle = "DeMen100ns's Blog",
+  heroKicker = "Personal blog",
+  heroSubtitle = "Competitive programming, university notes, and long recaps from the road.",
+  heroImage = "/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-001.jpg"
 } = Astro.props;
 
 const pageTitle = title === "DeMen100ns's Blog" ? title : `${title} | DeMen100ns's Blog`;
@@ -22,17 +30,47 @@ const pageTitle = title === "DeMen100ns's Blog" ? title : `${title} | DeMen100ns
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
     <title>{pageTitle}</title>
+    <script is:inline>
+      const savedTheme = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      document.documentElement.dataset.theme = savedTheme || (prefersDark ? "dark" : "light");
+    </script>
   </head>
   <body>
-    <div class="site-shell">
-      <header class="site-header">
+    <nav class="site-nav-bar" aria-label="Primary navigation">
+      <div class="nav-inner">
         <a class="brand" href="/" aria-label="DeMen100ns home">DeMen100ns</a>
-        <nav class="site-nav" aria-label="Primary navigation">
+        <div class="site-nav">
           <a href="/">Posts</a>
           <a href="https://github.com/DeMen100ns">GitHub</a>
-        </nav>
-      </header>
+          <button class="theme-toggle" type="button" aria-label="Toggle color theme">Theme</button>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <img src={heroImage} alt="" fetchpriority="high" />
+      <div class="hero-scrim"></div>
+      <div class="hero-title">
+        <p>{heroKicker}</p>
+        <h1>{heroTitle}</h1>
+        <span>{heroSubtitle}</span>
+      </div>
+    </header>
+
+    <div class="site-shell">
       <slot />
+      <footer class="site-footer">
+        <span>DeMen100ns</span>
+        <span>Competitive programming, university notes, and personal writing.</span>
+      </footer>
     </div>
+    <script is:inline>
+      document.querySelector(".theme-toggle")?.addEventListener("click", () => {
+        const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+        document.documentElement.dataset.theme = next;
+        localStorage.setItem("theme", next);
+      });
+    </script>
   </body>
 </html>

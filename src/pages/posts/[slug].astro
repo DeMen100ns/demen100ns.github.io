@@ -3,28 +3,88 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import { formatPostDate, getAllPosts, renderMarkdown } from "../../lib/posts";
 
 export function getStaticPaths() {
-  return getAllPosts().map((post) => ({
+  const posts = getAllPosts();
+
+  return posts.map((post, index) => ({
     params: { slug: post.routeSlug },
-    props: { post }
+    props: {
+      post,
+      posts,
+      newerPost: posts[index - 1] ?? null,
+      olderPost: posts[index + 1] ?? null
+    }
   }));
 }
 
-const { post } = Astro.props;
+const { post, posts, newerPost, olderPost } = Astro.props;
 const renderedBody = renderMarkdown(post.body);
+const recentPosts = posts.slice(0, 5);
+const categories = [...posts.reduce((map, item) => {
+  map.set(item.category, (map.get(item.category) ?? 0) + 1);
+  return map;
+}, new Map<string, number>())].sort((a, b) => b[1] - a[1]);
 ---
 
-<BaseLayout title={post.title} description={post.excerpt}>
-  <main class="post-page">
-    <article>
+<BaseLayout
+  title={post.title}
+  description={post.excerpt}
+  heroTitle={post.title}
+  heroKicker={post.category}
+  heroSubtitle={`${formatPostDate(post.date)} / ${post.readingMinutes} min read`}
+  heroImage={post.thumbnail}
+>
+  <main class="layout-grid post-page">
+    <article class="article-card">
       <header class="post-header">
-        <a class="back-link" href="/">Back to posts</a>
         <div class="post-meta">
           <time datetime={post.date}>{formatPostDate(post.date)}</time>
           <span>{post.readingMinutes} min read</span>
         </div>
         <h1>{post.title}</h1>
+        <div class="tag-row">
+          {post.tags.map((tag) => <span>{tag}</span>)}
+        </div>
       </header>
-      <div class="post-content" set:html={renderedBody} />
+      <div class="hr-line"></div>
+      <div class="post-content article-entry" set:html={renderedBody} />
+      <footer class="article-footer">
+        <div class="tag-row">
+          {post.tags.map((tag) => <span>{tag}</span>)}
+        </div>
+        <nav class="post-nav" aria-label="Post navigation">
+          {olderPost ? <a href={olderPost.url}><span>Older</span>{olderPost.title}</a> : <span></span>}
+          {newerPost ? <a href={newerPost.url}><span>Newer</span>{newerPost.title}</a> : <span></span>}
+        </nav>
+      </footer>
     </article>
+
+    <aside class="site-sidebar" aria-label="Blog sidebar">
+      <section class="profile-card compact">
+        <div class="profile-avatar">D</div>
+        <h2>DeMen100ns</h2>
+        <p>Notes from contests, university, and the places in between.</p>
+      </section>
+
+      <section class="widget-card">
+        <h2>Recent</h2>
+        <ul class="compact-list">
+          {recentPosts.map((item) => (
+            <li>
+              <a href={item.url}>{item.title}</a>
+              <time datetime={item.date}>{formatPostDate(item.date)}</time>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section class="widget-card">
+        <h2>Categories</h2>
+        <div class="category-cloud">
+          {categories.map(([category, count]) => (
+            <span>{category}<strong>{count}</strong></span>
+          ))}
+        </div>
+      </section>
+    </aside>
   </main>
 </BaseLayout>

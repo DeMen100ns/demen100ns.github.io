@@ -27,6 +27,8 @@ export type BlogPost = {
   excerpt: string;
   body: string;
   thumbnail?: string;
+  category: string;
+  tags: string[];
   readingMinutes: number;
 };
 
@@ -73,6 +75,48 @@ function truncate(text: string, limit = 180) {
   return `${shortened}...`;
 }
 
+function inferCategory(title: string, slug: string, body: string) {
+  const text = `${title} ${slug} ${body}`.toLowerCase();
+
+  if (slug.toLowerCase().startsWith("tt-") || text.includes("thách thức")) {
+    return "Contest";
+  }
+
+  if (text.includes("icpc") || text.includes("atcoder")) {
+    return "ICPC";
+  }
+
+  if (text.includes("nus") || text.includes("ay25") || text.includes("review")) {
+    return "University";
+  }
+
+  if (text.includes("thach") || text.includes("tt recap")) {
+    return "Contest";
+  }
+
+  return "Notes";
+}
+
+function inferTags(category: string, title: string, body: string) {
+  const text = `${title} ${body}`.toLowerCase();
+  const tags = new Set<string>([category]);
+
+  if (category === "Contest") {
+    tags.add("Recap");
+    tags.add("CP");
+    return [...tags];
+  }
+
+  if (text.includes("icpc")) tags.add("ICPC");
+  if (text.includes("hcmus")) tags.add("HCMUS");
+  if (text.includes("atcoder")) tags.add("AtCoder");
+  if (text.includes("nus")) tags.add("NUS");
+  if (text.includes("review")) tags.add("Review");
+  if (text.includes("competitive") || text.includes("contest")) tags.add("CP");
+
+  return [...tags].slice(0, 4);
+}
+
 function parsePost(sourcePath: string, raw: string): BlogPost {
   const sourceName = sourcePath.split("/").at(-1) ?? sourcePath;
   const match = sourceName.match(filePattern);
@@ -88,6 +132,7 @@ function parsePost(sourcePath: string, raw: string): BlogPost {
   const excerptSource = plainText(body);
   const wordCount = excerptSource ? excerptSource.split(/\s+/).length : 0;
   const routeSlug = `${date}-${slug}`;
+  const category = inferCategory(title, slug, body);
 
   return {
     sourcePath,
@@ -104,6 +149,8 @@ function parsePost(sourcePath: string, raw: string): BlogPost {
     excerpt: truncate(excerptSource),
     body,
     thumbnail: firstImage(raw),
+    category,
+    tags: inferTags(category, title, body),
     readingMinutes: Math.max(1, Math.ceil(wordCount / 220))
   };
 }
