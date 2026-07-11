@@ -1,4 +1,5 @@
 import MarkdownIt from "markdown-it";
+import { postMetadata, type PostMetadata } from "./postMetadata";
 
 const postModules = import.meta.glob<string>("../../_posts/*.md", {
   query: "?raw",
@@ -27,6 +28,7 @@ export type BlogPost = {
   excerpt: string;
   body: string;
   thumbnail?: string;
+  heroImage?: string;
   category: string;
   tags: string[];
   readingMinutes: number;
@@ -34,6 +36,89 @@ export type BlogPost = {
 
 const filePattern = /(\d{4})-(\d{2})-(\d{2})-(.+)\.md$/;
 const headingPattern = /^\s{0,3}#{1,6}\s+(.+?)\s*#*\s*$/m;
+const frontmatterPattern = /^---\r?\n([\s\S]*?)\r?\n---\s*(?:\r?\n|$)/;
+
+type FrontmatterValue = string | string[];
+type Frontmatter = Record<string, FrontmatterValue | undefined>;
+
+function cleanFrontmatterValue(value: string) {
+  const trimmed = value.trim();
+  return trimmed.replace(/^['"]|['"]$/g, "");
+}
+
+function parseInlineList(value: string) {
+  return value
+    .slice(1, -1)
+    .split(",")
+    .map(cleanFrontmatterValue)
+    .filter(Boolean);
+}
+
+function parseFrontmatterFields(source: string): Frontmatter {
+  const data: Frontmatter = {};
+  let currentListKey: string | null = null;
+
+  for (const line of source.split(/\r?\n/)) {
+    const listMatch = line.match(/^\s*-\s+(.+)$/);
+    if (listMatch && currentListKey) {
+      const existing = data[currentListKey];
+      const items = Array.isArray(existing) ? existing : [];
+      data[currentListKey] = [...items, cleanFrontmatterValue(listMatch[1])];
+      continue;
+    }
+
+    const fieldMatch = line.match(/^([A-Za-z][\w-]*):(?:\s*(.*))?$/);
+    if (!fieldMatch) {
+      currentListKey = null;
+      continue;
+    }
+
+    const [, rawKey, rawValue = ""] = fieldMatch;
+    const key = rawKey.trim();
+    const value = rawValue.trim();
+
+    if (!value) {
+      data[key] = [];
+      currentListKey = key;
+      continue;
+    }
+
+    data[key] = value.startsWith("[") && value.endsWith("]")
+      ? parseInlineList(value)
+      : cleanFrontmatterValue(value);
+    currentListKey = null;
+  }
+
+  return data;
+}
+
+function parseFrontmatter(raw: string) {
+  const match = raw.match(frontmatterPattern);
+  if (!match) {
+    return { metadata: {} as Frontmatter, content: raw };
+  }
+
+  return {
+    metadata: parseFrontmatterFields(match[1]),
+    content: raw.slice(match[0].length)
+  };
+}
+
+function metadataString(metadata: Frontmatter | PostMetadata, key: string) {
+  const value = metadata[key];
+  return typeof value === "string" && value.trim() ? value.trim() : undefined;
+}
+
+function metadataList(metadata: Frontmatter | PostMetadata, key: string) {
+  const value = metadata[key];
+  if (Array.isArray(value)) {
+    return value.map((item) => item.trim()).filter(Boolean);
+  }
+  if (typeof value === "string" && value.trim()) {
+    return value.split(",").map((item) => item.trim()).filter(Boolean);
+  }
+  return undefined;
+}
 
 function stripFirstHeading(markdownSource: string) {
   return markdownSource.replace(/^\s{0,3}#{1,6}\s+.+?\s*#*\s*(?:\r?\n)+/, "");
@@ -127,12 +212,28 @@ function parsePost(sourcePath: string, raw: string): BlogPost {
 
   const [, year, month, day, slug] = match;
   const date = `${year}-${month}-${day}`;
-  const body = stripFirstHeading(raw).trim();
-  const title = firstHeading(raw, slug.replace(/-/g, " "));
+  const { metadata, content } = parseFrontmatter(raw);
+  const defaults = postMetadata[sourceName] ?? {};
+  const body = stripFirstHeading(content).trim();
+  const title = metadataString(metadata, "title")
+    ?? metadataString(defaults, "title")
+    ?? firstHeading(content, slug.replace(/-/g, " "));
   const excerptSource = plainText(body);
   const wordCount = excerptSource ? excerptSource.split(/\s+/).length : 0;
   const routeSlug = `${date}-${slug}`;
-  const category = inferCategory(title, slug, body);
+  const category = metadataString(metadata, "category")
+    ?? metadataString(defaults, "category")
+    ?? inferCategory(title, slug, body);
+  const thumbnail = metadataString(metadata, "cover")
+    ?? metadataString(defaults, "cover")
+    ?? metadataString(metadata, "thumbnail")
+    ?? metadataString(defaults, "thumbnail")
+    ?? firstImage(content);
+  const heroImage = metadataString(metadata, "hero")
+    ?? metadataString(defaults, "hero")
+    ?? metadataString(metadata, "background")
+    ?? metadataString(defaults, "background")
+    ?? thumbnail;
 
   return {
     sourcePath,
@@ -148,9 +249,10 @@ function parsePost(sourcePath: string, raw: string): BlogPost {
     legacyUrl: `/${year}/${month}/${day}/${slug}.html`,
     excerpt: truncate(excerptSource),
     body,
-    thumbnail: firstImage(raw),
+    thumbnail,
+    heroImage,
     category,
-    tags: inferTags(category, title, body),
+    tags: metadataList(metadata, "tags") ?? metadataList(defaults, "tags") ?? inferTags(category, title, body),
     readingMinutes: Math.max(1, Math.ceil(wordCount / 220))
   };
 }

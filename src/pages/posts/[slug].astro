@@ -31,7 +31,7 @@ const categories = [...posts.reduce((map, item) => {
   heroTitle={post.title}
   heroKicker={post.category}
   heroSubtitle={`${formatPostDate(post.date)} / ${post.readingMinutes} min read`}
-  heroImage={post.thumbnail}
+  heroImage={post.heroImage}
 >
   <main class="layout-grid post-page">
     <article class="article-card">
