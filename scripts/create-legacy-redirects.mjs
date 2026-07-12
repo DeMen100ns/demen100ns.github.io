@@ -1,9 +1,10 @@
 import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 
-const postsDir = path.resolve("_posts");
+const postsDir = path.resolve("src/content/blog");
 const distDir = path.resolve("dist");
-const filePattern = /(\d{4})-(\d{2})-(\d{2})-(.+)\.md$/;
+const filePattern = /^(\d{4})-(\d{2})-(\d{2})-(.+)\.(?:md|mdx)$/;
+const frontmatterPattern = /^---\r?\n([\s\S]*?)\r?\n---/;
 const headingPattern = /^\s{0,3}#{1,6}\s+(.+?)\s*#*\s*$/m;
 
 function escapeHtml(value) {
@@ -12,6 +13,28 @@ function escapeHtml(value) {
     .replaceAll("<", "&lt;")
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;");
+}
+
+function stripYamlQuotes(value) {
+  const trimmed = value.trim();
+  if ((trimmed.startsWith('"') && trimmed.endsWith('"')) || (trimmed.startsWith("'") && trimmed.endsWith("'"))) {
+    try {
+      return JSON.parse(trimmed);
+    } catch {
+      return trimmed.slice(1, -1);
+    }
+  }
+  return trimmed;
+}
+
+function frontmatterTitle(raw) {
+  const frontmatter = raw.match(frontmatterPattern)?.[1];
+  const titleLine = frontmatter
+    ?.split(/\r?\n/)
+    .map((line) => line.match(/^title:\s*(.+)$/)?.[1])
+    .find(Boolean);
+
+  return titleLine ? stripYamlQuotes(titleLine) : undefined;
 }
 
 function redirectPage(destination, title) {
@@ -34,7 +57,12 @@ function redirectPage(destination, title) {
 `;
 }
 
-const files = (await readdir(postsDir)).filter((file) => file.endsWith(".md"));
+async function writeRedirect(target, destination, title) {
+  await mkdir(path.dirname(target), { recursive: true });
+  await writeFile(target, redirectPage(destination, title));
+}
+
+const files = (await readdir(postsDir)).filter((file) => /\.(?:md|mdx)$/.test(file));
 
 for (const file of files) {
   const match = file.match(filePattern);
@@ -44,12 +72,13 @@ for (const file of files) {
   }
 
   const [, year, month, day, slug] = match;
-  const date = `${year}-${month}-${day}`;
+  const postId = file.replace(/\.(?:md|mdx)$/, "");
   const raw = await readFile(path.join(postsDir, file), "utf8");
-  const title = raw.match(headingPattern)?.[1]?.trim() ?? slug.replace(/-/g, " ");
-  const destination = `/posts/${date}-${slug}/`;
-  const target = path.join(distDir, year, month, day, `${slug}.html`);
+  const title = frontmatterTitle(raw)
+    || raw.match(headingPattern)?.[1]?.trim()
+    || slug.replace(/-/g, " ");
+  const destination = `/blog/${postId.toLowerCase()}/`;
 
-  await mkdir(path.dirname(target), { recursive: true });
-  await writeFile(target, redirectPage(destination, title));
+  await writeRedirect(path.join(distDir, "posts", postId, "index.html"), destination, title);
+  await writeRedirect(path.join(distDir, year, month, day, `${slug}.html`), destination, title);
 }

@@ -1,12 +1,12 @@
 # DeMen100ns Blog
 
-Personal static blog for `https://demen100ns.github.io`.
+Personal static blog for <https://demen100ns.github.io>, ported to [D-Sketon/astro-theme-reimu](https://github.com/D-Sketon/astro-theme-reimu).
 
 ## Development
 
 ```sh
-npm install
-npm run dev
+pnpm install
+pnpm run dev
 ```
 
-Posts live in `_posts` and use the filename format `YYYY-MM-DD-slug.md`.
+Posts live in `src/content/blog` and use Reimu/Astro content collection frontmatter.

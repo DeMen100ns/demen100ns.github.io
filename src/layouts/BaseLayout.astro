@@ -1,76 +1,103 @@
 ---
 import "../styles/global.css";
+import "@reimujs/aos/dist/aos.css";
+
+import { ClientRouter } from "astro:transitions";
+
+import { BANNER, PRELOADER, SITE, SIDEBAR } from "../utils/config";
+import { urlFor } from "../utils/urlFor";
+import CommonMeta from "../components/partial/CommonMeta.astro";
+import VendorScript from "../components/partial/VendorScript.astro";
+import ThemeScript from "../components/partial/ThemeScript.astro";
+import Header from "../components/Header.astro";
+import AfterFooter from "../components/AfterFooter.astro";
+import ToTop from "../components/partial/ToTop";
+import Loader from "../components/partial/Loader.astro";
+import Sidebar from "../components/Sidebar.astro";
+import MobileNav from "../components/MobileNav.astro";
+import SidebarScript from "../components/sidebar/SidebarScript.astro";
 
 type Props = {
   title?: string;
   description?: string;
-  heroTitle?: string;
-  heroKicker?: string;
-  heroSubtitle?: string;
-  heroImage?: string;
+  cover?: string;
+  keywords?: string | string[];
+  isPost?: boolean;
+  headings?: Array<{
+    depth: number;
+    slug: string;
+    text: string;
+  }>;
+  toc?: boolean;
 };
 
 const {
-  title = "DeMen100ns's Blog",
-  description = "Competitive programming, university notes, and personal writing by DeMen100ns.",
-  heroTitle = "DeMen100ns's Blog",
-  heroKicker = "Personal blog",
-  heroSubtitle = "Competitive programming, university notes, and long recaps from the road.",
-  heroImage = "/assets/posts/2026-04-03-atcoder-journey-p2/archive-2/atcoder-journey-p2-001.jpg"
+  title = SITE.title,
+  description = SITE.description,
+  cover,
+  keywords = SITE.keywords,
+  isPost = false,
+  headings = [],
+  toc = true,
 } = Astro.props;
 
-const pageTitle = title === "DeMen100ns's Blog" ? title : `${title} | DeMen100ns's Blog`;
+const headerImage = cover || BANNER;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={SITE.language}>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="generator" content={Astro.generator} />
-    <meta name="description" content={description} />
-    <title>{pageTitle}</title>
-    <script is:inline>
-      const savedTheme = localStorage.getItem("theme");
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      document.documentElement.dataset.theme = savedTheme || (prefersDark ? "dark" : "light");
-    </script>
+    <ThemeScript />
+    <CommonMeta title={title} description={description} keywords={keywords} />
+    <link rel="preload" as="image" href={urlFor(headerImage)} />
+    <style>
+      main {
+        position: relative;
+        display: flex;
+        padding-top: 8px;
+        align-items: stretch;
+        max-width: 1550px;
+        margin: 0 auto;
+        overflow: visible;
+      }
+    </style>
+    <VendorScript />
+    <ClientRouter />
   </head>
   <body>
-    <nav class="site-nav-bar" aria-label="Primary navigation">
-      <div class="nav-inner">
-        <a class="brand" href="/" aria-label="DeMen100ns home">DeMen100ns</a>
-        <div class="site-nav">
-          <a href="/">Posts</a>
-          <a href="https://github.com/DeMen100ns">GitHub</a>
-          <button class="theme-toggle" type="button" aria-label="Toggle color theme">Theme</button>
-        </div>
-      </div>
-    </nav>
+    {PRELOADER.enable && <Loader />}
+    <Header title={title} cover={cover}>
+      <slot name="header" />
+    </Header>
 
-    <header class="hero">
-      <img src={heroImage} alt="" fetchpriority="high" />
-      <div class="hero-scrim"></div>
-      <div class="hero-title">
-        <p>{heroKicker}</p>
-        <h1>{heroTitle}</h1>
-        <span>{heroSubtitle}</span>
-      </div>
-    </header>
-
-    <div class="site-shell">
+    <main
+      class={SIDEBAR.position === "left"
+        ? "sidebar-left"
+        : SIDEBAR.position === "right"
+          ? "sidebar-right"
+          : ""}
+    >
+      {
+        SIDEBAR.position === "left" && (
+          <Sidebar isPost={isPost} headings={headings} toc={toc} />
+        )
+      }
       <slot />
-      <footer class="site-footer">
-        <span>DeMen100ns</span>
-        <span>Competitive programming, university notes, and personal writing.</span>
-      </footer>
-    </div>
-    <script is:inline>
-      document.querySelector(".theme-toggle")?.addEventListener("click", () => {
-        const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
-        document.documentElement.dataset.theme = next;
-        localStorage.setItem("theme", next);
-      });
+      {
+        SIDEBAR.position === "right" && (
+          <Sidebar isPost={isPost} headings={headings} toc={toc} />
+        )
+      }
+    </main>
+    <slot name="footer" />
+    <AfterFooter />
+    <ToTop client:load imageUrl={urlFor("images/taichi.png")} />
+    <MobileNav isPost={isPost} headings={headings} toc={toc} />
+    <div id="mask" class="hide"></div>
+    <SidebarScript />
+    <script>
+      import { css } from "../assets/LXGWWenKaiScreen.ttf";
+      document.body.style.fontFamily = css.family as string;
     </script>
   </body>
 </html>
