@@ -1,7 +1,7 @@
 ---
 title: 'DeMen Blog #3: Lũy thừa nhanh và hơn thế nữa!'
 description: "Nhắc lại lũy thừa nhanh và mở rộng ý tưởng binary lifting sang các bài toán quy hoạch động và cấu trúc hàm."
-pubDate: "2026-07-12T15:08:33+07:00"
+pubDate: "2023-01-01"
 categories: ["Competitive Programming"]
 tags: ["DP", "Math", "DeMen Blog"]
 excerpt: "Nhắc lại lũy thừa nhanh và mở rộng ý tưởng binary lifting sang các bài toán quy hoạch động và cấu trúc hàm."

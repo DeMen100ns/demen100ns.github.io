@@ -1,7 +1,7 @@
 ---
 title: 'Tips: Tin chuyên TS10'
 description: "Một checklist ngắn cho Tin chuyên TS10: chiến thuật làm bài, lưu ý C++14, Pascal và các lỗi thường gặp."
-pubDate: "2026-07-12T15:10:49+07:00"
+pubDate: "2023-01-01"
 categories: ["TS10"]
 tags: ["TS10", "Tips", "Competitive Programming"]
 excerpt: "Một checklist ngắn cho Tin chuyên TS10: chiến thuật làm bài, lưu ý C++14, Pascal và các lỗi thường gặp."

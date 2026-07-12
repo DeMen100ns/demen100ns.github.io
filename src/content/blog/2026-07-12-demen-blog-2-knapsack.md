@@ -1,7 +1,7 @@
 ---
 title: 'DeMen Blog #2: Bài toán Knapsack và các biến thể (Phần 1)'
 description: "Tổng hợp các cách tiếp cận cho bài toán Knapsack và biến thể truy vấn tổng dãy con, từ vét cạn, DP, bitset đến hàm sinh."
-pubDate: "2026-07-12T15:08:20+07:00"
+pubDate: "2023-01-01"
 categories: ["Competitive Programming"]
 tags: ["DP", "Math", "Bitwise", "Generating Function", "DeMen Blog"]
 excerpt: "Tổng hợp các cách tiếp cận cho bài toán Knapsack và biến thể truy vấn tổng dãy con, từ vét cạn, DP, bitset đến hàm sinh."

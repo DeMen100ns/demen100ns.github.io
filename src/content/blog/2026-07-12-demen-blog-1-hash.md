@@ -1,7 +1,7 @@
 ---
 title: 'DeMen Blog #1: "Bàn về Hash: Khi Hash không chỉ là so sánh hai xâu."'
 description: "Một góc nhìn rộng hơn về Hash: từ XOR Hashing, tree hashing đến modulo hashing và xác suất va chạm."
-pubDate: "2026-07-12T15:08:03+07:00"
+pubDate: "2023-01-01"
 categories: ["Competitive Programming"]
 tags: ["Hash", "Math", "DeMen Blog"]
 excerpt: "Một góc nhìn rộng hơn về Hash: từ XOR Hashing, tree hashing đến modulo hashing và xác suất va chạm."

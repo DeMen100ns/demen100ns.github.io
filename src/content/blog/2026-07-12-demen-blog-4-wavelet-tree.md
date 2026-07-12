@@ -1,7 +1,7 @@
 ---
 title: 'DeMen Blog #4: Wavelet Tree - Khi Segment Tree được đảo nhãn'
 description: "Giới thiệu Wavelet Tree qua góc nhìn Segment Tree đảo nhãn, từ P-Tree đến xử lý truy vấn thứ tự trên đoạn."
-pubDate: "2026-07-12T15:08:44+07:00"
+pubDate: "2023-01-01"
 categories: ["Competitive Programming"]
 tags: ["DeMen Blog", "Segment Tree", "Data Structure"]
 excerpt: "Giới thiệu Wavelet Tree qua góc nhìn Segment Tree đảo nhãn, từ P-Tree đến xử lý truy vấn thứ tự trên đoạn."
