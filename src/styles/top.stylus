@@ -16,6 +16,7 @@
   img {
     transition: .3s;
     opacity: 1;
+    border-radius: 50%;
   }
 
   .arrow-up {

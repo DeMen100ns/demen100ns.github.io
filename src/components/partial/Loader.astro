@@ -2,7 +2,7 @@
 import { PRELOADER } from "../../utils/config";
 import { urlFor } from "../../utils/urlFor";
 
-const guitarUrl = urlFor("images/guitar.png");
+const avatarIconUrl = urlFor("images/avatar.webp");
 ---
 
 <div id="loader" data-guitar-sound>
@@ -11,7 +11,7 @@ const guitarUrl = urlFor("images/guitar.png");
   <div class="spinner-box">
     <div class="loading-guitar">
       <img
-        src={guitarUrl}
+        src={avatarIconUrl}
         alt=""
         width="150"
         height="150"
@@ -82,6 +82,7 @@ const guitarUrl = urlFor("images/guitar.png");
       width: 150px
       height: 150px
       object-fit: contain
+      border-radius: 50%
 
     .loading-word
       position: absolute

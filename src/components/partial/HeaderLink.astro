@@ -10,7 +10,7 @@ const { href, ...props } = Astro.props;
 
 <span class="main-nav-link-wrap" data-guitar-sound>
   <img
-    src={urlFor("images/guitar.png")}
+    src={urlFor("images/avatar.webp")}
     alt=""
     class="main-nav-icon"
     width="32"
@@ -70,7 +70,8 @@ const { href, ...props } = Astro.props;
     width: 32px;
     height: 32px;
     object-fit: contain;
-    filter: contrast(1.25) brightness(0.85) drop-shadow(0 1px 1px rgba(0, 0, 0, 0.25));
+    border-radius: 50%;
+    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.25));
     transition: transform 0.3s, opacity 0.3s;
     cursor: pointer;
     will-change: transform;

@@ -8,7 +8,7 @@ import { __ } from "../utils/i18n";
 
 const totalcount = await totalCount();
 const totalmin2read = await totalReadingTime();
-const guitarUrl = urlFor("images/guitar.png");
+const avatarIconUrl = urlFor("images/avatar.webp");
 ---
 
 <footer id="footer">
@@ -132,7 +132,7 @@ const guitarUrl = urlFor("images/guitar.png");
   </div>
 </footer>
 
-<style lang="stylus" define:vars={{ imageUrl: `url('${guitarUrl}')` }}>
+<style lang="stylus" define:vars={{ imageUrl: `url('${avatarIconUrl}')` }}>
   #footer {
     background: linear-gradient(
       to top,
@@ -194,6 +194,7 @@ const guitarUrl = urlFor("images/guitar.png");
     height: 24px;
     opacity: 0.8;
     background: var(--imageUrl) no-repeat center / contain;
+    border-radius: 50%;
   }
 
   @keyframes transform-all {
