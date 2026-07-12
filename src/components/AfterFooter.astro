@@ -98,6 +98,78 @@ const copyright = String.raw`
     </script>
   </>
 )}
+<!-- Guitar click sound -->
+<script>
+  type GuitarSoundWindow = typeof window & {
+    __guitarSoundBound?: boolean;
+    __guitarAudioContext?: AudioContext;
+    webkitAudioContext?: typeof AudioContext;
+  };
+
+  const guitarWindow = window as GuitarSoundWindow;
+
+  const getGuitarAudioContext = () => {
+    const AudioContextCtor =
+      window.AudioContext || guitarWindow.webkitAudioContext;
+    if (!AudioContextCtor) return null;
+
+    if (!guitarWindow.__guitarAudioContext) {
+      guitarWindow.__guitarAudioContext = new AudioContextCtor();
+    }
+
+    return guitarWindow.__guitarAudioContext;
+  };
+
+  const playGuitarClick = () => {
+    const audioContext = getGuitarAudioContext();
+    if (!audioContext) return;
+
+    void audioContext.resume();
+
+    const now = audioContext.currentTime;
+    const output = audioContext.createGain();
+    output.gain.setValueAtTime(0.0001, now);
+    output.gain.exponentialRampToValueAtTime(0.18, now + 0.012);
+    output.gain.exponentialRampToValueAtTime(0.0001, now + 0.28);
+    output.connect(audioContext.destination);
+
+    const filter = audioContext.createBiquadFilter();
+    filter.type = "lowpass";
+    filter.frequency.setValueAtTime(1600, now);
+    filter.frequency.exponentialRampToValueAtTime(520, now + 0.24);
+    filter.connect(output);
+
+    [196, 247].forEach((frequency, index) => {
+      const oscillator = audioContext.createOscillator();
+      const noteGain = audioContext.createGain();
+      oscillator.type = index === 0 ? "triangle" : "sine";
+      oscillator.frequency.setValueAtTime(frequency, now);
+      oscillator.frequency.exponentialRampToValueAtTime(
+        frequency * 0.86,
+        now + 0.2,
+      );
+      noteGain.gain.setValueAtTime(index === 0 ? 0.8 : 0.35, now);
+      oscillator.connect(noteGain);
+      noteGain.connect(filter);
+      oscillator.start(now);
+      oscillator.stop(now + 0.3);
+    });
+  };
+
+  if (!guitarWindow.__guitarSoundBound) {
+    guitarWindow.__guitarSoundBound = true;
+    document.addEventListener(
+      "click",
+      (event) => {
+        const target = event.target;
+        if (!(target instanceof Element)) return;
+        if (!target.closest("[data-guitar-sound]")) return;
+        playGuitarClick();
+      },
+      { capture: true },
+    );
+  }
+</script>
 <!-- Copyright -->
 <script is:inline define:vars={{ copyright, version: packageData.version }}>
   console.log(String.raw`%c ${copyright}`,'color: #f06aae;')

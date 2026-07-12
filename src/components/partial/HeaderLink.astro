@@ -1,14 +1,23 @@
 ---
 import type { HTMLAttributes } from "astro/types";
-import { Icon } from "astro-icon/components";
+
+import { urlFor } from "../../utils/urlFor";
 
 type Props = HTMLAttributes<"a">;
 
 const { href, ...props } = Astro.props;
 ---
 
-<span class="main-nav-link-wrap">
-  <Icon name="fa6-solid:yin-yang" class="main-nav-icon" size={24} />
+<span class="main-nav-link-wrap" data-guitar-sound>
+  <img
+    src={urlFor("images/guitar.png")}
+    alt=""
+    class="main-nav-icon"
+    width="24"
+    height="24"
+    loading="lazy"
+    decoding="async"
+  />
   <a class="main-nav-link" href={href} {...props}><slot /></a>
 </span>
 
@@ -33,7 +42,7 @@ const { href, ...props } = Astro.props;
       opacity: 1;
     }
     &:hover .main-nav-icon {
-      transform: rotate(90deg) scale(1.1);
+      transform: scale(1.08);
     }
   }
 
@@ -55,16 +64,13 @@ const { href, ...props } = Astro.props;
 
   .main-nav-icon {
     opacity: 0.8;
-    color: var(--red-0);
     text-decoration: none;
     display: block;
     padding: 15px 5px;
-    display: flex;
-    align-items: center;
-    font-size: 24px;
-    font-weight: 400;
-    transform: rotate(90deg);
-    transition: transform 0.3s, color 0.3s;
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    transition: transform 0.3s, opacity 0.3s;
     cursor: pointer;
     will-change: transform;
   }

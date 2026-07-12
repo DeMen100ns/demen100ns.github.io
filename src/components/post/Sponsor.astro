@@ -1,19 +1,31 @@
 ---
-import { Icon } from "astro-icon/components";
-
 import { SPONSOR } from "../../utils/config";
 import { __ } from "../../utils/i18n";
 import { urlFor } from "../../utils/urlFor";
 ---
 
 <div class="sponsor-wrapper">
-  <div class="sponsor-button">
-    <div class="sponsor-icon rotate">
-      <Icon name="fa6-solid:yin-yang" size={24} />
+  <div class="sponsor-button" data-guitar-sound>
+    <div class="sponsor-icon">
+      <img
+        src={urlFor("images/guitar.png")}
+        alt=""
+        width="30"
+        height="30"
+        loading="lazy"
+        decoding="async"
+      />
     </div>
     <div class="sponsor-title">{__("sponsor.title")}</div>
-    <div class="sponsor-icon rotate">
-      <Icon name="fa6-solid:yin-yang" size={24} />
+    <div class="sponsor-icon">
+      <img
+        src={urlFor("images/guitar.png")}
+        alt=""
+        width="30"
+        height="30"
+        loading="lazy"
+        decoding="async"
+      />
     </div>
   </div>
   <div class="sponsor-tip">{__("sponsor.tip")}</div>
@@ -68,15 +80,17 @@ import { urlFor } from "../../utils/urlFor";
 
   .sponsor-icon {
     width: 30px;
+    height: 30px;
     margin: 0 10px;
     opacity: 0.8;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--color-link);
 
-    &.rotate {
-      animation: rotate-all 3s linear infinite;
+    img {
+      width: 30px;
+      height: 30px;
+      object-fit: contain;
     }
   }
 

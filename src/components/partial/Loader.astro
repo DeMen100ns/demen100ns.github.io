@@ -1,29 +1,23 @@
 ---
 import { PRELOADER } from "../../utils/config";
+import { urlFor } from "../../utils/urlFor";
+
+const guitarUrl = urlFor("images/guitar.png");
 ---
 
-<div id="loader">
+<div id="loader" data-guitar-sound>
   <div class="loading-left-bg loading-bg"></div>
   <div class="loading-right-bg loading-bg"></div>
   <div class="spinner-box">
-    <div class={PRELOADER.rotate ? "loading-taichi rotate" : "loading-taichi"}>
-      <svg
+    <div class="loading-guitar">
+      <img
+        src={guitarUrl}
+        alt=""
         width="150"
         height="150"
-        viewBox="0 0 1024 1024"
-        class="icon"
-        version="1.1"
-        xmlns="https://www.w3.org/2000/svg"
-        shape-rendering="geometricPrecision"
-      >
-        <path
-          d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z"
-          fill="var(--red-1, #f06aae)"></path>
-        <path
-          d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z 
-       M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95z"
-          fill="var(--red-1, #f06aae)"></path>
-      </svg>
+        loading="eager"
+        decoding="async"
+      />
     </div>
     <div class="loading-word">{PRELOADER.text}</div>
   </div>
@@ -83,11 +77,11 @@ import { PRELOADER } from "../../utils/config";
     opacity: 1
     transition: .5s
 
-    .loading-taichi
+    .loading-guitar img
       opacity: .8
-      
-    .rotate
-      animation: rotate-all 2s linear infinite
+      width: 150px
+      height: 150px
+      object-fit: contain
 
     .loading-word
       position: absolute
@@ -110,7 +104,4 @@ import { PRELOADER } from "../../utils/config";
     opacity: 0
     visibility: hidden
 
-@keyframes rotate-all
-  100%
-    transform: rotate(360deg)
 </style>

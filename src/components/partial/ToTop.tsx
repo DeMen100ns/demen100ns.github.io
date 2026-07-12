@@ -32,6 +32,7 @@ export default function ToTop({ imageUrl }: { imageUrl: string }) {
   return (
     <div
       className="sidebar-top"
+      data-guitar-sound=""
       onClick={handleClick}
       style={{
         opacity: opacity,

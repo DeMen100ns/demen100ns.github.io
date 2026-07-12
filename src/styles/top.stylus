@@ -15,7 +15,6 @@
 
   img {
     transition: .3s;
-    animation: rotate-all 3s linear infinite;
     opacity: 1;
   }
 

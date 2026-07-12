@@ -1,5 +1,4 @@
 ---
-import { Icon } from "astro-icon/components";
 import { getCollection } from "astro:content";
 
 import { SITE, MENU, SIDEBAR } from "../../utils/config";
@@ -55,10 +54,20 @@ const normalizedPath = currentPath.endsWith('/') && currentPath.length > 1
         : itemUrl;
       const isActive = normalizedPath === normalizedItemUrl;
       return (
-        <div class={`sidebar-menu-link-wrap ${isActive ? "link-active" : ""}`}>
+        <div
+          class={`sidebar-menu-link-wrap ${isActive ? "link-active" : ""}`}
+          data-guitar-sound
+        >
           <a class="sidebar-menu-link-dummy" href={itemUrl} />
           <div class="sidebar-menu-icon">
-            <Icon name="fa6-solid:yin-yang" size={24} />
+            <img
+              src={urlFor("images/guitar.png")}
+              alt=""
+              width="24"
+              height="24"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
           <div class="sidebar-menu-link">{__(item.name)}</div>
         </div>
@@ -165,21 +174,25 @@ const normalizedPath = currentPath.endsWith('/') && currentPath.length > 1
     }
 
     &:hover .sidebar-menu-icon {
-      transform: rotate(90deg) scale(1.1);
+      transform: scale(1.08);
     }
   }
 
   .sidebar-menu-icon {
-    color: var(--color-link);
     opacity: 0.8;
     text-decoration: none;
-    transition: opacity 0.2s, color 0.2s, transform 0.3s;
+    transition: opacity 0.2s, transform 0.3s;
     display: flex;
     padding: 5px;
     align-items: center;
     pointer-events: none;
     will-change: transform;
-    transform: rotate(90deg);
+
+    img {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+    }
   }
 
   .sidebar-menu-link-dummy {
@@ -218,7 +231,6 @@ const normalizedPath = currentPath.endsWith('/') && currentPath.length > 1
 
     .sidebar-menu-icon {
       opacity: 1;
-      color: #fff;
     }
   }
 </style>
