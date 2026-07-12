@@ -1,7 +1,7 @@
 export default [
-  "https://d-sketon.top/img/backwebp/bg1.webp",
-  "https://d-sketon.top/img/backwebp/bg4.webp",
-  "https://d-sketon.top/img/backwebp/bg7.webp",
-  "https://d-sketon.top/img/backwebp/bg8.webp",
-  "https://d-sketon.top/img/backwebp/bg10.webp",
+  "/images/covers/bocchi-cover-meltdown.webp",
+  "/images/covers/bocchi-cover-sunset.webp",
+  "/images/covers/bocchi-cover-flowers.webp",
+  "/images/covers/bocchi-cover-guitar.webp",
+  "/images/covers/bocchi-cover-hole.webp",
 ];
