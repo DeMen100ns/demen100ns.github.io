@@ -1,14 +1,14 @@
 :root {
-  --red-0: #ff0000;
-  --red-1: #ff5252;
-  --red-2: #ff7c7c;
-  --red-3: #ffafaf;
-  --red-4: #ffd0d0;
-  --red-5: #ffecec;
-  --red-5-5: #fff3f3;
-  --red-6: #fff7f7;
-  --color-red-6-shadow: rgba(255, 78, 78, 0.6);
-  --color-red-3-shadow: rgba(255, 78, 78, 0.3);
+  --red-0: #e84a9b;
+  --red-1: #f06aae;
+  --red-2: #f58abc;
+  --red-3: #f8b0d0;
+  --red-4: #fbd0e2;
+  --red-5: #fdeaf3;
+  --red-5-5: #fff3f8;
+  --red-6: #fff8fb;
+  --color-red-6-shadow: rgba(232, 74, 155, 0.45);
+  --color-red-3-shadow: rgba(232, 74, 155, 0.22);
   --grey-9: #888;
   --grey-7: var(--color-default);
 
@@ -37,10 +37,10 @@
 
 [data-theme="dark"]:root {
   --red-0: var(--red-1);
-  --red-4: rgba(255, 208, 208, .5);
-  --red-5: rgba(255, 228, 228, .15);
-  --red-5-5: rgba(255, 236, 236, .05);
-  --red-6: rgba(255, 243, 243, .2);
+  --red-4: rgba(251, 208, 226, .5);
+  --red-5: rgba(253, 234, 243, .15);
+  --red-5-5: rgba(255, 243, 248, .05);
+  --red-6: rgba(255, 248, 251, .2);
 
   --color-archive-year: #999;
   --color-default: #999;
