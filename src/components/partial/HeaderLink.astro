@@ -13,8 +13,8 @@ const { href, ...props } = Astro.props;
     src={urlFor("images/guitar.png")}
     alt=""
     class="main-nav-icon"
-    width="24"
-    height="24"
+    width="32"
+    height="32"
     loading="lazy"
     decoding="async"
   />
@@ -24,7 +24,7 @@ const { href, ...props } = Astro.props;
 <style lang="stylus">
   .main-nav-link-wrap {
     color: var(--red-0);
-    opacity: 0.8;
+    opacity: 1;
     text-decoration: none;
     padding: 0 15px;
     display: flex;
@@ -63,13 +63,14 @@ const { href, ...props } = Astro.props;
   }
 
   .main-nav-icon {
-    opacity: 0.8;
+    opacity: 1;
     text-decoration: none;
     display: block;
-    padding: 15px 5px;
-    width: 24px;
-    height: 24px;
+    padding: 11px 5px;
+    width: 32px;
+    height: 32px;
     object-fit: contain;
+    filter: contrast(1.25) brightness(0.85) drop-shadow(0 1px 1px rgba(0, 0, 0, 0.25));
     transition: transform 0.3s, opacity 0.3s;
     cursor: pointer;
     will-change: transform;

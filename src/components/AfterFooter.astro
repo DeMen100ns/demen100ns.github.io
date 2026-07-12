@@ -103,10 +103,17 @@ const copyright = String.raw`
   type GuitarSoundWindow = typeof window & {
     __guitarSoundBound?: boolean;
     __guitarAudioContext?: AudioContext;
+    __guitarMelodyIndex?: number;
     webkitAudioContext?: typeof AudioContext;
   };
 
   const guitarWindow = window as GuitarSoundWindow;
+  const guitarMelody = [
+    392.0, 440.0, 523.25, 440.0, 659.25, 659.25, 587.33,
+    392.0, 440.0, 523.25, 440.0, 587.33, 587.33, 523.25, 493.88, 440.0,
+    392.0, 440.0, 523.25, 440.0, 523.25, 587.33, 493.88, 440.0, 392.0,
+    587.33, 523.25,
+  ];
 
   const getGuitarAudioContext = () => {
     const AudioContextCtor =
@@ -126,33 +133,37 @@ const copyright = String.raw`
 
     void audioContext.resume();
 
+    const melodyIndex = guitarWindow.__guitarMelodyIndex ?? 0;
+    const frequency = guitarMelody[melodyIndex % guitarMelody.length];
+    guitarWindow.__guitarMelodyIndex = melodyIndex + 1;
+
     const now = audioContext.currentTime;
     const output = audioContext.createGain();
     output.gain.setValueAtTime(0.0001, now);
-    output.gain.exponentialRampToValueAtTime(0.18, now + 0.012);
-    output.gain.exponentialRampToValueAtTime(0.0001, now + 0.28);
+    output.gain.exponentialRampToValueAtTime(0.22, now + 0.01);
+    output.gain.exponentialRampToValueAtTime(0.0001, now + 0.34);
     output.connect(audioContext.destination);
 
     const filter = audioContext.createBiquadFilter();
     filter.type = "lowpass";
-    filter.frequency.setValueAtTime(1600, now);
-    filter.frequency.exponentialRampToValueAtTime(520, now + 0.24);
+    filter.frequency.setValueAtTime(Math.min(frequency * 7, 4200), now);
+    filter.frequency.exponentialRampToValueAtTime(frequency * 2.3, now + 0.26);
     filter.connect(output);
 
-    [196, 247].forEach((frequency, index) => {
+    [1, 2].forEach((multiplier, index) => {
       const oscillator = audioContext.createOscillator();
       const noteGain = audioContext.createGain();
       oscillator.type = index === 0 ? "triangle" : "sine";
-      oscillator.frequency.setValueAtTime(frequency, now);
+      oscillator.frequency.setValueAtTime(frequency * multiplier, now);
       oscillator.frequency.exponentialRampToValueAtTime(
-        frequency * 0.86,
-        now + 0.2,
+        frequency * multiplier * 0.985,
+        now + 0.18,
       );
-      noteGain.gain.setValueAtTime(index === 0 ? 0.8 : 0.35, now);
+      noteGain.gain.setValueAtTime(index === 0 ? 0.9 : 0.18, now);
       oscillator.connect(noteGain);
       noteGain.connect(filter);
       oscillator.start(now);
-      oscillator.stop(now + 0.3);
+      oscillator.stop(now + 0.36);
     });
   };
 
