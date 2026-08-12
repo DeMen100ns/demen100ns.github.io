@@ -1,10 +1,10 @@
 ---
 title: "GM, what now?"
-description: "Một vài suy nghĩ sau khi lên Grandmaster Codeforces: những mục tiêu CP đã hoàn thành, nhịp sống CP ở NUS, và các side-quest còn lại."
+description: "Như các bạn đã biết, mình đã lên đỏ vào tháng trước (27/6), sau 6 năm làm Codeforces. Việc mình lên đỏ đã giúp mình đạt được 2/3 mục tiêu lớn mà mình đặt ra từ những bước chân đầu tiên..."
 pubDate: "2026-08-12T20:00:00+08:00"
 categories: ["Competitive Programming"]
 tags: ["CP", "Codeforces", "Competitive Programming"]
-excerpt: "Một vài suy nghĩ sau khi lên Grandmaster Codeforces: những mục tiêu CP đã hoàn thành, nhịp sống CP ở NUS, và các side-quest còn lại."
+excerpt: "Như các bạn đã biết, mình đã lên đỏ vào tháng trước (27/6), sau 6 năm làm Codeforces. Việc mình lên đỏ đã giúp mình đạt được 2/3 mục tiêu lớn mà mình đặt ra từ những bước chân đầu tiên..."
 ---
 
 # GM, what now?
