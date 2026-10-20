@@ -1,10 +1,10 @@
 ---
 title: "DeMen Blog #8: Lời giải bài K - ICPC miền Nam 2026"
-description: "Lời giải bài Locker Riddle 2 tại ICPC miền Nam 2026 bằng hàm sinh và quy hoạch động trên hệ số."
+description: "DeMen Blog #8"
 pubDate: "2026-10-20"
 categories: ["Competitive Programming"]
 tags: ["DeMen Blog", "ICPC", "Generating Function", "Math"]
-excerpt: "Từ phép biến đổi bit đến hàm sinh EGF, OGF và cách tính kỳ vọng số bước để giải Locker Riddle 2."
+excerpt: "Locker Riddle 2"
 author: "Võ Khắc Triệu (DeMen100ns)"
 ---
 
