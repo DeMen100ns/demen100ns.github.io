@@ -9,13 +9,12 @@ import ArchiveList from "../../components/ArchiveList.astro";
 import Pagination from "../../components/Pagination.astro";
 import HeaderTitle from "../../components/partial/HeaderTitle.astro";
 import { urlFor } from "../../utils/urlFor";
+import { sortPosts } from "../../utils/sortPosts";
 import CategoryList from "../../components/partial/CategoryList.astro";
 
 export async function getStaticPaths({ paginate }: { paginate: Function }) {
   const posts = await getCollection("blog");
-  posts.sort((a, b) => {
-    return b.data.pubDate.getTime() - a.data.pubDate.getTime();
-  });
+  posts.sort(sortPosts);
   return paginate(posts, {
     pageSize: 10,
   });

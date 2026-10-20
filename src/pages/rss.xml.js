@@ -3,10 +3,11 @@ import { getCollection } from "astro:content";
 
 import { SITE } from "../utils/config";
 import { urlFor } from "../utils/urlFor";
+import { sortPosts } from "../utils/sortPosts";
 
 export async function GET(context) {
   const posts = await getCollection("blog");
-  const sortedPosts = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+  const sortedPosts = posts.sort(sortPosts);
   return rss({
     title: SITE.title,
     description: SITE.description,

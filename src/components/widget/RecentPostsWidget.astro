@@ -3,11 +3,12 @@ import { getCollection } from "astro:content";
 
 import { urlFor } from "../../utils/urlFor";
 import { __ } from "../../utils/i18n";
+import { sortPosts } from "../../utils/sortPosts";
 
 async function getRecentPosts(limit = 5) {
   const posts = await getCollection("blog");
   return posts
-    .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
+    .sort(sortPosts)
     .slice(0, limit);
 }
 

@@ -2,12 +2,11 @@
 import { type CollectionEntry, getCollection, render } from "astro:content";
 
 import BlogLayout from "../../layouts/BlogLayout.astro";
+import { sortPosts } from "../../utils/sortPosts";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
-  const sortedPosts = posts.sort(
-    (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime()
-  );
+  const sortedPosts = posts.sort(sortPosts);
   return sortedPosts.map((post, index) => ({
     params: { slug: post.id },
     props: {

@@ -8,6 +8,7 @@ import CategoryList from "../../../components/partial/CategoryList.astro";
 import HeaderTitle from "../../../components/partial/HeaderTitle.astro";
 import ArchiveList from "../../../components/ArchiveList.astro";
 import { urlFor } from "../../../utils/urlFor";
+import { sortPosts } from "../../../utils/sortPosts";
 
 export async function getStaticPaths({ paginate }: { paginate: Function }) {
   const posts = await getCollection("blog");
@@ -26,9 +27,7 @@ export async function getStaticPaths({ paginate }: { paginate: Function }) {
   const categories = [...categoriesMap.keys()];
   return [...categoriesMap.entries()]
     .map((categoryMap) => {
-      categoryMap[1].sort((a, b) => {
-        return b.data.pubDate.getTime() - a.data.pubDate.getTime();
-      });
+      categoryMap[1].sort(sortPosts);
       return categoryMap;
     })
     .flatMap((categoryMap) => {

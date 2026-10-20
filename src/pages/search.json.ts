@@ -1,10 +1,9 @@
 import { getCollection } from "astro:content";
+import { sortPosts } from "../utils/sortPosts";
 
 export async function GET() {
   const posts = await getCollection("blog");
-  const sortedPosts = posts.sort(
-    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-  );
+  const sortedPosts = posts.sort(sortPosts);
   const searchList = sortedPosts.map((post) => ({
     id: post.id,
     data: {
