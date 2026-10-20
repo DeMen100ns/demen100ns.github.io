@@ -295,10 +295,10 @@ vector <int> transform(vector <int> A, int n){
 mint ans(const vector <mint> &a, const vector <mint> &b, int S){
     //Note that a_i = a[i - S]
 
-    mint G1 = a[2 * S]; // G'(1) = a_S
-    mint H1 = b[2 * S]; // H'(1) = b_S
+    mint G1 = a[2 * S]; // G(1) = a_S
+    mint H1 = b[2 * S]; // H(1) = b_S
 
-    mint dG = 0, dH = 0;
+    mint dG = 0, dH = 0; //G'(1) and H'(1)
 
     for (int j = -S; j < S; ++j) {
         mint factor = mint(S) / (S - j);
