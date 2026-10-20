@@ -186,6 +186,8 @@ Vậy ta chỉ cần tính $a_i, b_i$ và thế số vào là có thể tính đ
 
 Độ phức tạp là $O(n \log n + nS)$, chủ yếu do phải DP đoạn tính $a_i, b_i$.
 
+Bài này còn một lời giải thuần xác suất nữa, cũng tương đối khó nghĩ (bài tập cho người đọc `<("))`
+
 ## Implementation
 
 ```cpp
