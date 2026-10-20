@@ -56,7 +56,13 @@ H(x) &= \prod_{i=1}^n \left( \frac{(r_ix)^0}{0!} + \frac{(r_ix)^2}{2!} + \dots \
 \end{aligned}
 $$
 
-Tiếp theo, nâng cấp một chút, gọi $g_k$ là xác suất để xâu $B$ trở thành xâu full $0$ sau đúng $k$ bước **(không nhất thiết phải là lần đầu).** Thay đổi chỉ diễn ra nếu có bit của $B$ bật thì thay vì flip chẵn lần thì sẽ là lẻ lần, vì: $$\frac{(r_ix)^1}{1!} + \frac{(r_ix)^3}{3!} + \dots = \frac{e^{r_ix} - e^{-r_ix}}{2}$$, ta có hàm sinh của $g_k$ là EGF $G(x)$:
+Tiếp theo, nâng cấp một chút, gọi $g_k$ là xác suất để xâu $B$ trở thành xâu full $0$ sau đúng $k$ bước **(không nhất thiết phải là lần đầu).** Thay đổi chỉ diễn ra nếu có bit của $B$ bật thì thay vì flip chẵn lần thì sẽ là lẻ lần, vì:
+
+$$
+\frac{(r_ix)^1}{1!} + \frac{(r_ix)^3}{3!} + \dots = \frac{e^{r_ix} - e^{-r_ix}}{2}
+$$
+
+Từ đó, ta có hàm sinh của $g_k$ là EGF $G(x)$:
 
 $$
 \begin{aligned}
@@ -75,10 +81,16 @@ Thật ra nếu bạn để ý, sự kiện mà $g_k$ biểu diễn sẽ xảy r
 Như vậy, $g_k=\sum_{i=0}^k f_i h_{k-i}$. Trông quen không? Nó chính là tích chập (convolution) trong OGF đấy!
 
 Gọi $F_o(x), G_o(x), H_o(x)$ là **OGF** của $f, g, h$, ta có:
-$$G_o(x) = F_o(x)H_o(x) \rightarrow F_o(x) = \frac{G_o(x)}{H_o(x)}$$
+
+$$
+G_o(x) = F_o(x)H_o(x) \rightarrow F_o(x) = \frac{G_o(x)}{H_o(x)}
+$$
 
 Quay lại với đáp án, ta biết đáp án cần tìm là $\sum k f_k$, nếu biến đổi lại, nó sẽ là $F_o'(1)$!! Vì ta biết $F_o=G_o/H_o$, ta có:
-$$F_o'(1) = \frac{G'_o(1)H_o(1) - H'_o(1)G_o(1)}{H_o(1)^2}$$
+
+$$
+F_o'(1) = \frac{G'_o(1)H_o(1) - H'_o(1)G_o(1)}{H_o(1)^2}
+$$
 
 Ok hay đấy, nma mình mới có $G(x)$ với $H(x)$ thôi mà?
 
@@ -96,41 +108,77 @@ G(x) &= \prod_{i=1}^n \frac{e^{r_ix} + (-1)^{B_i}e^{-r_ix}}{2} \\
 \end{aligned}
 $$
 
-Nếu để ý, ta có thể biểu diễn $G(x)$ dưới dạng $$\sum_{i=-S}^S a_i e^{\frac{ix}{S}}$$
+Nếu để ý, ta có thể biểu diễn $G(x)$ dưới dạng:
+
+$$
+\sum_{i=-S}^S a_i e^{\frac{ix}{S}}
+$$
 
 Với hệ số $a_i$ có thể được tính bằng DP (tự nghĩ công thức DP nhé ^^).
 
-Vì $$e^{\frac{ix}{S}} = \sum_{j \ge 0} \left(\frac{i}{S}\right)^j \frac{x^j}{j!}$$
+Ta có:
 
-nên khi chuyển sang OGF (nhân $j!$ vào hệ số của $x^j$), $e^{\frac{ix}{S}}$ trở thành:
+$$
+e^{\frac{ix}{S}} = \sum_{j \ge 0} \left(\frac{i}{S}\right)^j \frac{x^j}{j!}
+$$
 
-$$\sum_{j \ge 0} \left(\frac{i}{S}\right)^j x^j = \frac{1}{1 - \frac{i}{S}x}$$
+Khi chuyển sang OGF (nhân $j!$ vào hệ số của $x^j$), $e^{\frac{ix}{S}}$ trở thành:
+
+$$
+\sum_{j \ge 0} \left(\frac{i}{S}\right)^j x^j = \frac{1}{1 - \frac{i}{S}x}
+$$
 
 Vậy:
 
-$$G_o(x) = \sum_{i=-S}^{S} \frac{a_i}{1 - \frac{i}{S}x}$$
+$$
+G_o(x) = \sum_{i=-S}^{S} \frac{a_i}{1 - \frac{i}{S}x}
+$$
 
 Tương tự, $H(x)$ chính là $G(x)$ với $B = 0$ (mọi $B_i = 0$), nên cũng biểu diễn được dưới dạng $\sum_{i=-S}^{S} b_i e^{\frac{ix}{S}}$ và
 
-$$H_o(x) = \sum_{i=-S}^{S} \frac{b_i}{1 - \frac{i}{S}x}$$
+$$
+H_o(x) = \sum_{i=-S}^{S} \frac{b_i}{1 - \frac{i}{S}x}
+$$
 
 ### Edge case
 
 Vấn đề còn lại là, khi consider tổng của $G_o(x)$ và $H_o(x)$ tại $x=1$ và $i=S$ thì sẽ xảy ra trường hợp chia cho $0$, nên ta phải khử đi bằng cách nhân cả hai cho $1-x$. Đặt:
 
-$$\tilde{G_o}(x) = (1-x)G_o(x) = a_S + \sum_{i \ne S} a_i \frac{1-x}{1 - \frac{i}{S}x}$$
+$$
+\tilde{G_o}(x) = (1-x)G_o(x) = a_S + \sum_{i \ne S} a_i \frac{1-x}{1 - \frac{i}{S}x}
+$$
 
-$$\tilde{H_o}(x) = (1-x)H_o(x) = b_S + \sum_{i \ne S} b_i \frac{1-x}{1 - \frac{i}{S}x}$$
+$$
+\tilde{H_o}(x) = (1-x)H_o(x) = b_S + \sum_{i \ne S} b_i \frac{1-x}{1 - \frac{i}{S}x}
+$$
 
-Vậy giờ $$F_o(x) = \frac{G_o(x)}{H_o(x)} = \frac{\tilde{G_o}(x)}{\tilde{H_o}(x)}$$
+Vậy giờ:
 
-$$\rightarrow F_o'(1) = \frac{\tilde{G_o}'(1)\tilde{H_o}(1) - \tilde{H_o}'(1)\tilde{G_o}(1)}{\tilde{H_o}(1)^2}$$
+$$
+F_o(x) = \frac{G_o(x)}{H_o(x)} = \frac{\tilde{G_o}(x)}{\tilde{H_o}(x)}
+$$
+
+$$
+\rightarrow F_o'(1) = \frac{\tilde{G_o}'(1)\tilde{H_o}(1) - \tilde{H_o}'(1)\tilde{G_o}(1)}{\tilde{H_o}(1)^2}
+$$
 
 Ta có:
-$$\tilde{G_o}(1) = a_S + \sum_{i \ne S} a_i \frac{1-1}{1 - \frac{i}{S}} = a_S$$
-$$\tilde{H_o}(1) = b_S + \sum_{i \ne S} b_i \frac{1-1}{1 - \frac{i}{S}} = b_S$$
-$$\tilde{G_o}'(1) = \sum_{i \ne S} a_i \cdot \frac{\frac{i}{S} - 1}{\left(1 - \frac{i}{S}\right)^2} = -\sum_{i \ne S} \frac{S \cdot a_i}{S - i}$$
-$$\tilde{H_o}'(1) = \sum_{i \ne S} b_i \cdot \frac{\frac{i}{S} - 1}{\left(1 - \frac{i}{S}\right)^2} = -\sum_{i \ne S} \frac{S \cdot b_i}{S - i}$$
+
+$$
+\tilde{G_o}(1) = a_S + \sum_{i \ne S} a_i \frac{1-1}{1 - \frac{i}{S}} = a_S
+$$
+
+$$
+\tilde{H_o}(1) = b_S + \sum_{i \ne S} b_i \frac{1-1}{1 - \frac{i}{S}} = b_S
+$$
+
+$$
+\tilde{G_o}'(1) = \sum_{i \ne S} a_i \cdot \frac{\frac{i}{S} - 1}{\left(1 - \frac{i}{S}\right)^2} = -\sum_{i \ne S} \frac{S \cdot a_i}{S - i}
+$$
+
+$$
+\tilde{H_o}'(1) = \sum_{i \ne S} b_i \cdot \frac{\frac{i}{S} - 1}{\left(1 - \frac{i}{S}\right)^2} = -\sum_{i \ne S} \frac{S \cdot b_i}{S - i}
+$$
 
 Vậy ta chỉ cần tính $a_i, b_i$ và thế số vào là có thể tính được $F_o'(1)$ trong $O(S)$.
 
