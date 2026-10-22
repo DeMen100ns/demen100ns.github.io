@@ -19,6 +19,7 @@ Hello ae, cũng được một thời gian rồi nhỉ. Dạo này học hành n
 > Cho xâu nhị phân $A$ độ dài $n$. Mỗi bước, có xác suất $p_i / S$ là các bit là bội của $i$ sẽ được flip ($\sum p_i=S$, chỉ có một $i$ được chọn).
 >
 > Tính expected số bước để xâu nhị phân $A$ lần đầu tiên full $0$.
+> $1 \le n \le S \le 100$
 
 ## Kiến thức cần biết
 - Hàm sinh (Generating Function)
